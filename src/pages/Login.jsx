@@ -16,6 +16,8 @@ import loginAsset from "../assets/login.gif"
 import { useState } from "react"
 import { Visibility, VisibilityOff } from "@mui/icons-material"
 import GoogleIcon from "../component/icon/GoogleIcon"
+import { Helmet } from "react-helmet"
+
 const LoginPage = () => {
     const [showPassword, setShowPassword] = useState(false)
 
@@ -24,8 +26,12 @@ const LoginPage = () => {
     const handleMouseDownPassword = event => {
         event.preventDefault()
     }
+
     return (
         <Stack spacing={2} direction="row">
+            <Helmet>
+                <title>login</title>
+            </Helmet>
             <Box
                 sx={{
                     flex: 1,
