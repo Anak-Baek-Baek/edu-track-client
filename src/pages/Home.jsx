@@ -1,7 +1,9 @@
 import { Box } from "@mui/material"
-
+import { useAuthState } from "react-firebase-hooks/auth"
+import { app, auth } from "../config/firebase"
 const Home = () => {
-    return <Box>Home</Box>
+    const [user, loading, error] = useAuthState(auth)
+    return <Box>{JSON.stringify(user?.email)}</Box>
 }
 
 export default Home
