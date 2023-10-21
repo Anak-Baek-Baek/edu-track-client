@@ -10,7 +10,7 @@ const SearchBarInput = () => {
                 display: "flex",
                 alignItems: "center",
                 width: 400,
-                border: "1px solid",
+                border: "2px solid #E7E7E7",
                 borderRadius: "3.125rem",
                 bgcolor: "white",
                 ":hover": { filter: "brightness(.98)" },
