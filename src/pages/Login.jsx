@@ -9,7 +9,6 @@ import {
     InputLabel,
     Link,
     OutlinedInput,
-    Snackbar,
     Stack,
     Typography,
 } from "@mui/material"
@@ -19,12 +18,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material"
 import GoogleIcon from "../component/icon/GoogleIcon"
 import { Helmet } from "react-helmet"
 import { useForm } from "react-hook-form"
-import {
-    createUserWithEmailAndPassword,
-    GoogleAuthProvider,
-    signInWithEmailAndPassword,
-    signInWithPopup,
-} from "firebase/auth"
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth"
 import { auth, googleProvider } from "../config/firebase"
 import { useSnackbar } from "notistack"
 import { useNavigate } from "react-router-dom"
