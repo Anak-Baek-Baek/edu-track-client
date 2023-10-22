@@ -1,7 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material"
 import CourseCard from "../component/course/CourseCard"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
-
 const Home = () => {
     return (
         <Box
