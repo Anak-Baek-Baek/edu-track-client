@@ -19,12 +19,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material"
 import GoogleIcon from "../component/icon/GoogleIcon"
 import { Helmet } from "react-helmet"
 import { useForm } from "react-hook-form"
-import {
-    createUserWithEmailAndPassword,
-    GoogleAuthProvider,
-    signInWithEmailAndPassword,
-    signInWithPopup,
-} from "firebase/auth"
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth"
 import { auth, googleProvider } from "../config/firebase"
 import { useSnackbar } from "notistack"
 import { useNavigate } from "react-router-dom"
@@ -174,7 +169,7 @@ const LoginPage = () => {
                         </Button>
                         <Box alignSelf="center" display="flex" gap={0.5}>
                             <Typography>dont have a account?</Typography>
-                            <Link href="/" textTransform="capitalize" fontWeight="bold">
+                            <Link href="/register" textTransform="capitalize" fontWeight="bold">
                                 sign up
                             </Link>
                         </Box>
