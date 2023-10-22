@@ -6,12 +6,13 @@ const HomePage = lazy(() => import("../pages/Home"))
 
 const LoginPage = lazy(() => import("../pages/Login"))
 
+const RegisterPage = lazy(() => import("../pages/Register"))
+
 const routes = [
     // home
     { path: "/", component: HomePage },
     // login
     { path: "/login", component: LoginPage },
-    { path: "/test", component: Test },
 ]
 
 export default routes
