@@ -4,6 +4,7 @@ import {
     Divider,
     Fade,
     FormControl,
+    FormHelperText,
     IconButton,
     InputAdornment,
     InputLabel,
@@ -12,21 +13,21 @@ import {
     Stack,
     Typography,
 } from "@mui/material"
-import loginAsset from "../assets/login.gif"
+import registerAsset from "../assets/register.gif"
 import { useState } from "react"
 import { Visibility, VisibilityOff } from "@mui/icons-material"
 import GoogleIcon from "../component/icon/GoogleIcon"
 import { Helmet } from "react-helmet"
 import { useForm } from "react-hook-form"
-import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth"
+import { GoogleAuthProvider, createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth"
 import { auth, googleProvider } from "../config/firebase"
-import { useSnackbar } from "notistack"
+import { enqueueSnackbar } from "notistack"
 import { useNavigate } from "react-router-dom"
 
-const LoginPage = () => {
+const RegisterPage = () => {
     const [showPassword, setShowPassword] = useState(false)
+
     const handleClickShowPassword = () => setShowPassword(show => !show)
-    const { enqueueSnackbar } = useSnackbar()
 
     const handleMouseDownPassword = event => {
         event.preventDefault()
@@ -42,17 +43,17 @@ const LoginPage = () => {
 
     const onSubmit = async ({ email, password }) => {
         try {
-            const res = await signInWithEmailAndPassword(auth, email, password)
-            enqueueSnackbar("success login", {
+            const res = await createUserWithEmailAndPassword(auth, email, password)
+            enqueueSnackbar("success register", {
                 variant: "success",
                 anchorOrigin: { horizontal: "right", vertical: "top" },
                 autoHideDuration: 2000,
             })
             setTimeout(() => {
-                navigate("/")
-            })
+                navigate("/login")
+            }, 500)
         } catch (error) {
-            enqueueSnackbar("email or password is wrong", {
+            enqueueSnackbar("failed to register", {
                 variant: "error",
                 anchorOrigin: { horizontal: "right", vertical: "top" },
                 autoHideDuration: 2000,
@@ -71,12 +72,12 @@ const LoginPage = () => {
             console.log(error)
         }
     }
+
     return (
         <Stack spacing={2} direction="row">
             <Helmet>
-                <title>login</title>
+                <title>Register</title>
             </Helmet>
-
             <Box
                 sx={{
                     flex: 1,
@@ -94,34 +95,42 @@ const LoginPage = () => {
                     >
                         <Stack spacing={1}>
                             <Typography variant="h3" fontWeight="800">
-                                Login
+                                Register
                             </Typography>
-                            <Typography
-                                variant="h6"
-                                color="GrayText"
-                                fontWeight="
-                    bold"
-                            >
-                                welcome back to edutrack!
+                            <Typography variant="h7" color="GrayText" fontWeight="bold">
+                                welcome to edutrack! create account and start learning
                             </Typography>
                         </Stack>
+
                         <FormControl variant="outlined">
                             <InputLabel htmlFor="email">Email</InputLabel>
                             <OutlinedInput
-                                id="email"
-                                {...register("email")}
+                                {...register("email", {
+                                    required: { message: "password is required" },
+                                })}
                                 type="email"
                                 label="email"
                             />
+                            {errors.email ? (
+                                <FormHelperText>{errors.email.message}</FormHelperText>
+                            ) : (
+                                ""
+                            )}
                         </FormControl>
                         <Stack spacing={1}>
                             <FormControl variant="outlined">
                                 <InputLabel htmlFor="password">Password</InputLabel>
                                 <OutlinedInput
-                                    id="password"
                                     type={showPassword ? "text" : "password"}
-                                    label="password"
-                                    {...register("password")}
+                                    required
+                                    {...register("password", {
+                                        pattern: {
+                                            value: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/,
+                                            message: "Password must meet the required pattern",
+                                        },
+                                        required: { message: "password is required" },
+                                    })}
+                                    label="Password"
                                     endAdornment={
                                         <InputAdornment position="end">
                                             <IconButton
@@ -134,42 +143,37 @@ const LoginPage = () => {
                                         </InputAdornment>
                                     }
                                 />
+                                {errors.password ? (
+                                    <FormHelperText>{errors.password.message}</FormHelperText>
+                                ) : (
+                                    ""
+                                )}
                             </FormControl>
-                            <Link
-                                href="/"
-                                alignSelf="self-end"
-                                textTransform="capitalize"
-                                fontWeight="bold"
-                            >
-                                forgot password?
-                            </Link>
                         </Stack>
                         <Button
                             color="secondary"
                             type="submit"
                             variant="contained"
                             size="large"
-                            sx={{ borderRadius: 100 }}
                             fullWidth
                         >
-                            login
+                            Register
                         </Button>
                         <Divider>OR</Divider>
                         <Button
-                            onClick={handleGoogleLogin}
                             startIcon={<GoogleIcon />}
                             variant="outlined"
                             color="primary"
                             size="large"
                             fullWidth
-                            sx={{ borderRadius: 100 }}
+                            onClick={handleGoogleLogin}
                         >
-                            login with google
+                            Continue with Google
                         </Button>
                         <Box alignSelf="center" display="flex" gap={0.5}>
-                            <Typography>dont have a account?</Typography>
-                            <Link href="/register" textTransform="capitalize" fontWeight="bold">
-                                sign up
+                            <Typography>Already have an account?</Typography>
+                            <Link href="/login" textTransform="capitalize" fontWeight="bold">
+                                Login
                             </Link>
                         </Box>
                     </Stack>
@@ -179,16 +183,16 @@ const LoginPage = () => {
                 sx={{
                     flex: 1,
                     height: "100vh",
-                    bgcolor: "secondary.main",
+                    bgcolor: "#6A00FF",
                     justifyContent: "center",
                     alignItems: "center",
                 }}
                 display={{ xs: "none", md: "flex" }}
             >
-                <img src={loginAsset} width={450} />
+                <img src={registerAsset} width={450} />
             </Box>
         </Stack>
     )
 }
 
-export default LoginPage
+export default RegisterPage
