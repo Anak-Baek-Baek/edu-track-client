@@ -6,6 +6,7 @@ import { theme } from "./lib/mui/theme"
 import { SnackbarProvider } from "notistack"
 import { Suspense, lazy } from "react"
 import ProtectedLayout from "./layout/ProtectedLayout"
+import RegisterPage from "./pages/Register"
 
 const HomePage = lazy(() => import("./pages/Home"))
 const LoginPage = lazy(() => import("./pages/Login"))
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                             <Route index Component={HomePage} />
                         </Route>
                         <Route path="/login" Component={LoginPage} />
+                        <Route path="/register" Component={RegisterPage} />
                     </Routes>
                 </BrowserRouter>
             </SnackbarProvider>
