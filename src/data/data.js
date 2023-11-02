@@ -1,7 +1,7 @@
 const Course = [
   {
     name: "Belajar React",
-    category: "react",
+    category: "development",
     lecturer: "Sandhi",
     totalSections: 2,
     bacgkroundUrl:
@@ -28,8 +28,8 @@ const Course = [
   },
   {
     name: "Belajar HTML",
-    category: "html",
-    lecturer: "Sandhi",
+    category: "development",
+    lecturer: "Gibrant",
     totalSections: 3,
     bacgkroundUrl:
       "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?auto=format&fit=crop&q=80&w=1932&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -63,8 +63,8 @@ const Course = [
   },
   {
     name: "Belajar CSS3",
-    category: "css",
-    lecturer: "Sandhi",
+    category: "development",
+    lecturer: "Pogh",
     totalSections: 2,
     bacgkroundUrl:
       "https://images.unsplash.com/photo-1610986603166-f78428624e76?auto=format&fit=crop&q=80&w=2058&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -90,8 +90,8 @@ const Course = [
   },
   {
     name: "Belajar Webpack",
-    category: "webpack",
-    lecturer: "Sandhi",
+    category: "development",
+    lecturer: "Yumiko",
     totalSections: 2,
     bacgkroundUrl: "",
     price: 60000,
@@ -116,8 +116,8 @@ const Course = [
   },
   {
     name: "Belajar HTML5",
-    category: "html",
-    lecturer: "Sandhi",
+    category: "development",
+    lecturer: "Huro",
     totalSections: 2,
     bacgkroundUrl:
       "https://images.unsplash.com/photo-1621839673705-6617adf9e890?auto=format&fit=crop&q=80&w=1932&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -143,8 +143,8 @@ const Course = [
   },
   {
     name: "Belajar BOOTSTRAP 5",
-    category: "bootstrap",
-    lecturer: "Sandhi",
+    category: "development",
+    lecturer: "Nipse",
     totalSections: 2,
     bacgkroundUrl:
       "https://images.unsplash.com/photo-1606166325695-ce4d64e3195f?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -171,8 +171,8 @@ const Course = [
   },
   {
     name: "Belajar Tailwind CSS",
-    category: "css",
-    lecturer: "Sandhi",
+    category: "development",
+    lecturer: "Qeps",
     totalSections: 2,
     bacgkroundUrl:
       "https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -198,8 +198,8 @@ const Course = [
   },
   {
     name: "Belajar Laravel 8",
-    category: "php",
-    lecturer: "Sandhi",
+    category: "development",
+    lecturer: "Naele",
     totalSections: 2,
     bacgkroundUrl:
       "https://images.unsplash.com/photo-1607970669494-309137683be5?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -227,8 +227,8 @@ const Course = [
   },
   {
     name: "Belajar JavaScript & DOM",
-    category: "javascript",
-    lecturer: "Sandhi",
+    category: "development",
+    lecturer: "Hyunda",
     totalSections: 2,
     bacgkroundUrl:
       "https://images.unsplash.com/photo-1592609931095-54a2168ae893?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -256,8 +256,8 @@ const Course = [
   },
   {
     name: "Belajar Javascript",
-    category: "javascript",
-    lecturer: "Sandhi",
+    category: "development",
+    lecturer: "Hyrt",
     totalSections: 2,
     bacgkroundUrl:
       "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -285,8 +285,8 @@ const Course = [
   },
   {
     name: "Belajar membuat aplikasi menggunakan PHP",
-    category: "php",
-    lecturer: "Sandhi",
+    category: "development",
+    lecturer: "Jusi",
     totalSections: 2,
     bacgkroundUrl:
       "https://images.unsplash.com/photo-1599507593362-50fa53ed1b40?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -314,7 +314,7 @@ const Course = [
   },
   {
     name: "Belajar HTML Dari Nol Sampai Mahir",
-    category: "html",
+    category: "development",
     lecturer: "Elon",
     totalSections: 2,
     bacgkroundUrl:
@@ -343,8 +343,8 @@ const Course = [
   },
   {
     name: "CSS Dasar",
-    category: "css",
-    lecturer: "Sandhi",
+    category: "development",
+    lecturer: "Rulfi",
     totalSections: 2,
     bacgkroundUrl:
       "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -372,8 +372,8 @@ const Course = [
   },
   {
     name: "Belajar PHP untuk PEMULA",
-    category: "php",
-    lecturer: "Sandhi",
+    category: "development",
+    lecturer: "Jack",
     totalSections: 2,
     bacgkroundUrl:
       "https://images.pexels.com/photos/270557/pexels-photo-270557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -401,7 +401,7 @@ const Course = [
   },
   {
     name: "Belajar Python",
-    category: "python",
+    category: "development",
     lecturer: "Poo",
     totalSections: 2,
     bacgkroundUrl:
@@ -428,7 +428,7 @@ const Course = [
   },
   {
     name: "Belajar Javascript untuk Pemula",
-    category: "javascript",
+    category: "development",
     lecturer: "Raymond",
     totalSections: 2,
     bacgkroundUrl:
@@ -451,6 +451,354 @@ const Course = [
         videoUrl: "https://youtu.be/BheHgHeU1U0?si=KUn8CBB7w77SVfyj",
         position: 2,
         isPublished: true,
+        isFree: true,
+      },
+    ],
+  },
+  {
+    name: "Photoshop Tutorial",
+    category: "design",
+    lecturer: "Pexer",
+    totalSections: 2,
+    bacgkroundUrl:
+      "https://images.pexels.com/photos/826114/pexels-photo-826114.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    price: 66000,
+    section: [
+      {
+        title: "Photo Manipulation In photoshop",
+        description:
+          "Design is a craft where professionals create visual content to communicate messages.",
+        videoUrl: "https://youtu.be/4Cl9kw9K-kk?si=kX8avJVJQuYmxLBL",
+        position: 1,
+        isPublished: true,
+        isFree: true,
+      },
+      {
+        title: "RF Logo Design Illustrator",
+        description:
+          "By applying visual hierarchy and page layout techniques, designers use typography and pictures to meet users' specific needs and focus on the logic of displaying elements in interactive designs, to optimize the user experience",
+        videoUrl: "https://youtu.be/xqQztpskD_Q?si=1SAOi0_ZB-4GIoti",
+        position: 2,
+        isPublished: true,
+        isFree: true,
+      },
+    ],
+  },
+  {
+    name: "Adobe Illustrator Tutorial",
+    category: "design",
+    lecturer: "Jilk",
+    totalSections: 2,
+    bacgkroundUrl:
+      "https://images.pexels.com/photos/6444/pencil-typography-black-design.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    price: 87000,
+    section: [
+      {
+        title: "New Tips Adobe Illustrator",
+        description:
+          "Welcome to my channel Graphics Creation. On this channel I create 2D graphics related tutorials like Vector Art, Logo Design, Banner/Poster Design, UI/UX Designs and much more.",
+        videoUrl: "https://youtu.be/wJOvHoI-xvQ?si=6y29yRI4SPfaIqI9",
+        position: 1,
+        isPublished: true,
+        isFree: true,
+      },
+      {
+        title: "How to Create Simple Mandala Design in Illustrator",
+        description:
+          "Are you interested in Graphic Designing, UI/UX Designing, Editing, Motion Graphics and much and really eager to learn all about creative art then you are on the right place.",
+        videoUrl: "https://youtu.be/jJpT_GXym50?si=Hf0GPCyfv5suGVUo",
+        position: 2,
+        isPublished: true,
+        isFree: false,
+      },
+    ],
+  },
+  {
+    name: "Strategi Bisnis",
+    category: "marketing",
+    lecturer: "Raymond Chin",
+    totalSections: 2,
+    bacgkroundUrl:
+      "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    price: 73000,
+    section: [
+      {
+        title: "Strategi Bisnis Pemula ke 100 JUTA/Bulan di 2023",
+        description:
+          "So, kira2 itu (sneakpeek) dari The Sevenpreneur Business Blueprint Program (Part 1). Tujuh hal yang bakal kalian pelajarin untuk bangun bisnis dari nol sampe omzet 100 juta per bulan.",
+        videoUrl: "https://youtu.be/J0zyxsDd1bA?si=RGIKXHNm7yshtuJz",
+        position: 1,
+        isPublished: true,
+        isFree: false,
+      },
+      {
+        title: "Trik Marketing",
+        description:
+          "Gw yakin banyak pebisnis yang ga sadar kalo mereka udah ngelewatin beberapa step dari marketing funnel. Tapi di video ini gw lebih jelasin hal practical apa yang bisa dilakuin biar sales kalian lebih maksimal lagi. Salah satu cara yang kalian bisa lakuin itu adalah dengan improve customer service di bisnis kalian, dan kebetulan gw lagi collab sama Meta, kalian bisa klik link ini kalo tertarik buat coba layanan Whatsapp Business",
+        videoUrl: "https://youtu.be/icg9b6itW6I?si=RBDxZJdADbVhefS1",
+        position: 2,
+        isPublished: true,
+        isFree: false,
+      },
+    ],
+  },
+  {
+    name: "Belajar Digital Marketing",
+    category: "marketing",
+    lecturer: "Agusleo Halim",
+    totalSections: 2,
+    bacgkroundUrl:
+      "https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    price: 60000,
+    section: [
+      {
+        title:
+          "Belajar Digital Marketing dari 0 | Bukan Soal Jualan, tapi Mahamin Orang!",
+        description:
+          "Belajar Digital Marketing dari 0 | Bukan Soal Jualan, tapi Mahamin Orang!",
+        videoUrl: "https://youtu.be/aQbZdee5PXI?si=Yv574moCLf8qrPdu",
+        position: 1,
+        isPublished: true,
+        isFree: true,
+      },
+      {
+        title:
+          "Belajar Digital Marketing dari 0 | Banyak Ngiklan tapi Malah Rugi? Tonton Video Ini",
+        description:
+          "Kata siapa masarin produk itu gampang? Salah! Aslinya, susah-susah gampang. Bisa aja, lu udah pasang iklan di sana-sini, ngeluarin duit buat spot yang paling keliatan sama calon pembeli, tapi bisnis lu… tetep sepi. Bukan cuma itu. Mungkin lu juga udah punya tim andalan buat bikin iklan, tapi entah kenapa rasanya kayak gak ada yang tertarik.",
+        videoUrl: "https://youtu.be/tWgKVC80_zs?si=ifEm-f8wcR-RkdJ0",
+        position: 2,
+        isPublished: true,
+        isFree: false,
+      },
+    ],
+  },
+  {
+    name: "Simple Self Improvement",
+    category: "self development",
+    lecturer: "Michael",
+    totalSections: 2,
+    bacgkroundUrl:
+      "https://images.pexels.com/photos/6648560/pexels-photo-6648560.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load",
+    price: 40000,
+    section: [
+      {
+        title: "8 Simple Self Improvement Principles",
+        description:
+          "When it comes to self improvement, what principles have you found to be the most influential to your growth? Check out Practical Growth Academy (Free $20 Giftcard)",
+        videoUrl: "https://youtu.be/0foQiAJ3uHg?si=YTp51qStWCApm6WL",
+        position: 1,
+        isPublished: true,
+        isFree: true,
+      },
+      {
+        title: "How To Master Self-Control",
+        description:
+          "Master the art of self-discipline and moderation in a world filled with instant gratification and distractions.",
+        videoUrl: "https://youtu.be/MnSj-y01KDg?si=uuecXAxppzRvGpjr",
+        position: 2,
+        isPublished: true,
+        isFree: true,
+      },
+    ],
+  },
+  {
+    name: "Satu Insight",
+    category: "self development",
+    lecturer: "Lionel",
+    totalSections: 2,
+    bacgkroundUrl:
+      "https://images.pexels.com/photos/3576284/pexels-photo-3576284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    price: 50000,
+    section: [
+      {
+        title: "SOSMED TOXIC TAPI CANDU! (Pengaruh Media Sosial)",
+        description:
+          "Seberapa besar sih pengaruh socmed di hidup kita? Apakah socmed sekarang cenderung lebih toxic dari sebelumnya? Nah, di video kali ini Evan bakal ngebahas serba-serbi socmed masa kini dan gimana cara mengantisipasi efek negatifnya. So, tonton videonya sampai akhir, ya!",
+        videoUrl: "https://youtu.be/4zaxye5uqug?si=6cqjSbO1WIBNHeyx",
+        position: 1,
+        isPublished: true,
+        isFree: true,
+      },
+      {
+        title: "CANCEL CULTURE: Alasan Sosmed Jadi TOXIC ",
+        description:
+          "Sebenernya Cancel Culture itu apaan sih? Seberapa besar efeknya? Nah, di video kali ini Evan bakal ngebahas serba-serbi fenomena Cancel Culture. So, tonton videonya sampai akhir, ya!",
+        videoUrl: "https://youtu.be/HUXtcE-NQDQ?si=7ydmIt2D-JPvMVZw",
+        position: 2,
+        isPublished: true,
+        isFree: true,
+      },
+    ],
+  },
+  {
+    name: "Starting your Own Business",
+    category: "business",
+    lecturer: "Guspa",
+    totalSections: 2,
+    bacgkroundUrl:
+      "https://images.pexels.com/photos/1647919/pexels-photo-1647919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    price: 67000,
+    section: [
+      {
+        title: "10 Tips for Starting your Own Business [ Must Watch ]",
+        description:
+          "Do you want to start your own business? Then, watch 10 Business tips for starting your own business. Every Young Entrepreneurs must need to aware with these 10 business.",
+        videoUrl: "https://youtu.be/wxyGeUkPYFM?si=gjnd9pJcHqJ9Ij3G",
+        position: 1,
+        isPublished: true,
+        isFree: true,
+      },
+      {
+        title: "How to Build Financial Projections for Your Business",
+        description:
+          "Build financial projections for startup business.Forecast your business future income & expenses.",
+        videoUrl: "https://youtu.be/Oqw1Rj0MVJo?si=Vl2pf_tVoUN6L0TY",
+        position: 2,
+        isPublished: false,
+        isFree: flase,
+      },
+    ],
+  },
+  {
+    name: "Grow Your Business",
+    category: "business",
+    lecturer: "Brian",
+    totalSections: 2,
+    bacgkroundUrl:
+      "https://images.pexels.com/photos/926390/pexels-photo-926390.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    price: 80000,
+    section: [
+      {
+        title: "7 Strategies to Grow Your Business | Brian Tracy",
+        description:
+          "One of the best strategies to growing a business is to have a business plan, which is why I've included a FREE one with this video. Click the link above to get access! ",
+        videoUrl: "https://youtu.be/dJQn4DqzMVQ?si=d8XC4S5T8UFVWhNC",
+        position: 1,
+        isPublished: true,
+        isFree: true,
+      },
+      {
+        title: "8 Undeniable Tips To Keep Customers For Life | Brian Tracy",
+        description:
+          "Customer loyalty is KEY. Here are some tips to help you keep customers for life, since repeat customers are the most valuable of all.",
+        videoUrl: "https://youtu.be/lJUzh7INCZg?si=TPFNY4RJpb7tWe8U",
+        position: 2,
+        isPublished: false,
+        isFree: true,
+      },
+    ],
+  },
+  {
+    name: "Music Production",
+    category: "music",
+    lecturer: "Nathan",
+    totalSections: 2,
+    bacgkroundUrl:
+      "https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    price: 82000,
+    section: [
+      {
+        title: "30 Music Production Tips in Under 16 Minutes",
+        description: "i love making music",
+        videoUrl: "https://youtu.be/VpiTlS0TYxI?si=4peQU-ZtPQ7E8tlt",
+        position: 1,
+        isPublished: true,
+        isFree: true,
+      },
+      {
+        title: "5 Tricks for HUGE Bass",
+        description: "What do you use to make music?",
+        videoUrl: "https://youtu.be/MSFcVNTs-G4?si=RK4AOXwAfGvZUDvz",
+        position: 2,
+        isPublished: true,
+        isFree: true,
+      },
+    ],
+  },
+  {
+    name: "Growth your next beat",
+    category: "music",
+    lecturer: "Servida",
+    totalSections: 2,
+    bacgkroundUrl:
+      "https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg?auto=compress&cs=tinysrgb&w=300",
+    price: 87000,
+    section: [
+      {
+        title:
+          "20 Music Production Tips/Tricks You NEED To Try In Your Next Beat!",
+        description:
+          "ALRIGHTY! Here's 20 tips that you need to try out in your next beat. These are random tips that cover a bunch of aspects of music production like music theory, mixing, creative stuff, I am showing you the tips in the new FL Studio 20.8 but it can easily be applied to other DAWS like Ableton and Logic! Thanks to everyone who contributed to the video, I personally learned a lot of cool tricks. Let me know if you wanna see another video like this!",
+        videoUrl: "https://youtu.be/WB5j2hg7wsE?si=u86dt2vz2cjwXwjz",
+        position: 1,
+        isPublished: true,
+        isFree: true,
+      },
+      {
+        title: "I Made A Song In 10 Minutes, 1 Hour, 100 Hours!",
+        description: "Hallo.. Do you Remember me?",
+        videoUrl: "https://youtu.be/hZtDHcXb0Pw?si=8IZAn0QN4J2W5iyU",
+        position: 2,
+        isPublished: true,
+        isFree: false,
+      },
+    ],
+  },
+  {
+    name: "Accounting Basics",
+    category: "accounting",
+    lecturer: "Stuff",
+    totalSections: 2,
+    bacgkroundUrl:
+      "https://images.pexels.com/photos/53621/calculator-calculation-insurance-finance-53621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    price: 87000,
+    section: [
+      {
+        title: "ACCOUNTING BASICS: a Guide to (Almost) Everything",
+        description:
+          "Would you like to know what Accounting REALLY MEANS? In this short tutorial we'll take 1 simple example and follow it through all 8 Steps of the Accounting Cycle - from start to finish - you'll build a solid understanding of all the Accounting Basics we encounter along the way. Stuff like the Accounting Equation, Debits & Credits, Double-Entry Accounting, T-Accounts, the Trial Balance etc.",
+        videoUrl: "https://youtu.be/yYX4bvQSqbo?si=syXdWRQSwrvTobOm",
+        position: 1,
+        isPublished: true,
+        isFree: true,
+      },
+      {
+        title: "BOOKKEEPING BASICS: 7 Steps to Get You Started",
+        description:
+          "I'll show you how to get started and maintain an effective bookkeeping system. Plus, you'll discover my two bonus tips that will set you up for success!",
+        videoUrl: "https://youtu.be/a3GqDaIw8pA?si=Sm8Ox80TioqmmFdE",
+        position: 2,
+        isPublished: true,
+        isFree: true,
+      },
+    ],
+  },
+  {
+    name: "Personal Finance",
+    category: "finance",
+    lecturer: "Matt",
+    totalSections: 2,
+    bacgkroundUrl:
+      "https://images.pexels.com/photos/3483098/pexels-photo-3483098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    price: 53000,
+    section: [
+      {
+        title: "10 pelajaran keuangan pribadi yang mengubah hidup saya",
+        description:
+          "Di tengah ranjau saran keuangan online yang dipertanyakan, saya telah menemukan beberapa strategi yang benar-benar berhasil. Dalam video ini, saya membagikan 10 pelajaran keuangan pribadi terbesar yang mengubah hidup saya, membawa saya dari seorang mahasiswa yang bangkrut menjadi seorang berusia 34 tahun yang bebas finansial dengan prostat yang sehat.",
+        videoUrl: "https://youtu.be/bMXTGGxrQ3A?si=JLqRvs4rG6znzXCj",
+        position: 1,
+        isPublished: true,
+        isFree: true,
+      },
+      {
+        title: "10 Greatest Personal Finance Lessons That Changed My Life",
+        description:
+          "In this video, you will learn the 10 personal finance lessons that have made the biggest impact on my life. These are lessons that my wife and I learned the hard way, and they have helped us achieve a level of financial success.  I hope you can take away at least one or two things to apply to your own life.",
+        videoUrl: "https://youtu.be/DnK_dJo6es8?si=HoYd5xYemsprsNnK",
+        position: 2,
+        isPublished: false,
         isFree: true,
       },
     ],
