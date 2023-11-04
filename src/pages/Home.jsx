@@ -6,9 +6,12 @@ import section2Asset from "../assets/section2.gif"
 import LogoIcon from "../component/icon/Logo"
 import CategoryCard from "../component/category/CategoryCard"
 import categoryAsset from "../assets/category.png"
+import courses from "../data/data"
+import getRandomCourse from "../utils/getRandomCourse"
 const thisYear = new Date().getFullYear()
 
 const Home = () => {
+    const recomendedCourse = getRandomCourse(8)
     return (
         <>
             <Box
@@ -26,13 +29,15 @@ const Home = () => {
                 </Typography>
                 {/* course cards */}
                 <Grid2 container columns={12} spacing={4}>
-                    {Array.from(Array(8)).map((_, index) => (
+                    {recomendedCourse.map((course, index) => (
                         <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
                             <CourseCard
-                                title="computer science asdoasdoijosda doasijdoasjodjasoi doasjodasjoij"
-                                totalSection={5}
+                                title={course.name}
+                                totalSection={course.totalSections}
                                 progressPercent={80}
-                                lecturer="john"
+                                lecturer={course.lecturer}
+                                imageUrl={course.bacgkroundUrl}
+                                id={course.id}
                             />
                         </Grid2>
                     ))}
