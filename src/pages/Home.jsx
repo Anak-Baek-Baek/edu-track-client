@@ -8,6 +8,7 @@ import CategoryCard from "../component/category/CategoryCard"
 import categoryAsset from "../assets/category.png"
 import courses from "../data/data"
 import getRandomCourse from "../utils/getRandomCourse"
+import Footer from "../component/template/Footer"
 const thisYear = new Date().getFullYear()
 
 const Home = () => {
@@ -126,23 +127,7 @@ const Home = () => {
                     </Box>
                     <img src={section2Asset} height="min(50%,450)" />
                 </Box>
-                <Box
-                    component="footer"
-                    display="flex"
-                    padding={4}
-                    justifyContent="space-between"
-                    alignItems="center"
-                    height={120}
-                    bgcolor="#100"
-                >
-                    <Box display="flex" gap={1} alignItems="center">
-                        <LogoIcon fontSize="large" />
-                        <Typography variant="h5" color="white" fontWeight="bold">
-                            edutrack.
-                        </Typography>
-                    </Box>
-                    <Typography color="white">&copy; {thisYear} edutech.tech </Typography>
-                </Box>
+                <Footer />
             </Box>
         </>
     )
