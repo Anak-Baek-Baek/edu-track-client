@@ -7,10 +7,10 @@ import { SnackbarProvider } from "notistack"
 import { Suspense, lazy } from "react"
 import ProtectedLayout from "./layout/ProtectedLayout"
 import RegisterPage from "./pages/Register"
-import CourseDetail from "./pages/CourseDetail"
 
 const HomePage = lazy(() => import("./pages/Home"))
 const LoginPage = lazy(() => import("./pages/Login"))
+const CourseDetailPage = lazy(() => import("./pages/CourseDetail"))
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <Suspense fallback={<h1>loading...</h1>}>
@@ -21,10 +21,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                     <Routes>
                         <Route path="/" element={<ProtectedLayout />}>
                             <Route index Component={HomePage} />
-                            <Route path="course/:id" Component={CourseDetail} />
                         </Route>
                         <Route path="/login" Component={LoginPage} />
                         <Route path="/register" Component={RegisterPage} />
+                        <Route path="course/:id" Component={CourseDetailPage} />
                     </Routes>
                 </BrowserRouter>
             </SnackbarProvider>

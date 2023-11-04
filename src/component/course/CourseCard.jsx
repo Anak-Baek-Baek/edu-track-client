@@ -52,9 +52,12 @@ const CourseCard = props => {
                 },
             }}
         >
-            <CardActionArea LinkComponent={Link} to={`course/${id}`}>
+            <CardActionArea LinkComponent={Link} to={`course/${id}`} sx={{ overflow: "hidden" }}>
                 <CardMedia
-                    sx={{ height: 160, borderRadius: ".5rem" }}
+                    sx={{
+                        height: 160,
+                        borderRadius: ".5rem",
+                    }}
                     image={imageUrl || exampleImage}
                     title="green iguana"
                 />
