@@ -2,7 +2,11 @@ const courses = [
     {
         name: "Belajar React",
         category: "development",
-        lecturer: "Sandhi",
+        lecturer: {
+            id: 1,
+            name: "Sandhi",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/0/000748.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -30,7 +34,11 @@ const courses = [
     {
         name: "Belajar HTML",
         category: "development",
-        lecturer: "Gibrant",
+        lecturer: {
+            id: 2,
+            name: "Gibrant",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/1/001701.jpg",
+        },
         totalSections: 3,
         bacgkroundUrl:
             "https://images.unsplash.com/photo-1632882765546-1ee75f53becb?auto=format&fit=crop&q=80&w=1932&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -66,7 +74,11 @@ const courses = [
     {
         name: "Belajar CSS3",
         category: "development",
-        lecturer: "Pogh",
+        lecturer: {
+            id: 3,
+            name: "Pogh",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/4/004469.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.unsplash.com/photo-1610986603166-f78428624e76?auto=format&fit=crop&q=80&w=2058&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -94,7 +106,11 @@ const courses = [
     {
         name: "Belajar Webpack",
         category: "development",
-        lecturer: "Yumiko",
+        lecturer: {
+            id: 4,
+            name: "Yumiko",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/7/007071.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl: "",
         price: 60000,
@@ -121,7 +137,11 @@ const courses = [
     {
         name: "Belajar HTML5",
         category: "development",
-        lecturer: "Huro",
+        lecturer: {
+            id: 5,
+            name: "Huro",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/1/001053.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.unsplash.com/photo-1621839673705-6617adf9e890?auto=format&fit=crop&q=80&w=1932&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -149,7 +169,11 @@ const courses = [
     {
         name: "Belajar BOOTSTRAP 5",
         category: "development",
-        lecturer: "Nipse",
+        lecturer: {
+            id: 6,
+            name: "Nipse",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/2/002793.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.unsplash.com/photo-1606166325695-ce4d64e3195f?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -178,7 +202,11 @@ const courses = [
     {
         name: "Belajar Tailwind CSS",
         category: "development",
-        lecturer: "Qeps",
+        lecturer: {
+            id: 7,
+            name: "Qeps",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/1/001113.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -206,7 +234,11 @@ const courses = [
     {
         name: "Belajar Laravel 8",
         category: "development",
-        lecturer: "Naele",
+        lecturer: {
+            id: 8,
+            name: "Naele",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/8/008941.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.unsplash.com/photo-1607970669494-309137683be5?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -234,7 +266,11 @@ const courses = [
     {
         name: "Belajar JavaScript & DOM",
         category: "development",
-        lecturer: "Hyunda",
+        lecturer: {
+            id: 9,
+            name: "Hyunda",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/7/007651.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.unsplash.com/photo-1592609931095-54a2168ae893?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -264,7 +300,11 @@ const courses = [
     {
         name: "Belajar Javascript",
         category: "development",
-        lecturer: "Hyrt",
+        lecturer: {
+            id: 10,
+            name: "Hyrt",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/2/002642.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -294,7 +334,11 @@ const courses = [
     {
         name: "Belajar membuat aplikasi menggunakan PHP",
         category: "development",
-        lecturer: "Jusi",
+        lecturer: {
+            id: 11,
+            name: "Jusi",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/7/007307.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.unsplash.com/photo-1599507593362-50fa53ed1b40?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -324,7 +368,11 @@ const courses = [
     {
         name: "Belajar HTML Dari Nol Sampai Mahir",
         category: "development",
-        lecturer: "Elon",
+        lecturer: {
+            id: 12,
+            name: "Elon",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/3/003826.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -353,7 +401,11 @@ const courses = [
     {
         name: "CSS Dasar",
         category: "development",
-        lecturer: "Rulfi",
+        lecturer: {
+            id: 13,
+            name: "Rulfi",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/2/002833.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -383,7 +435,11 @@ const courses = [
     {
         name: "Belajar PHP untuk PEMULA",
         category: "development",
-        lecturer: "Jack",
+        lecturer: {
+            id: 14,
+            name: "Jack",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/9/009901.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/270557/pexels-photo-270557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -413,7 +469,11 @@ const courses = [
     {
         name: "Belajar Python",
         category: "development",
-        lecturer: "Poo",
+        lecturer: {
+            id: 15,
+            name: "Poo",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/7/007785.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -441,7 +501,11 @@ const courses = [
     {
         name: "Belajar Javascript untuk Pemula",
         category: "development",
-        lecturer: "Raymond",
+        lecturer: {
+            id: 16,
+            name: "Raymond",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/5/005775.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/1089440/pexels-photo-1089440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -471,7 +535,11 @@ const courses = [
     {
         name: "Photoshop Tutorial",
         category: "design",
-        lecturer: "Pexer",
+        lecturer: {
+            id: 17,
+            name: "Pexer",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/0/000211.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/826114/pexels-photo-826114.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -501,7 +569,11 @@ const courses = [
     {
         name: "Adobe Illustrator Tutorial",
         category: "design",
-        lecturer: "Jilk",
+        lecturer: {
+            id: 18,
+            name: "Jilk",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/9/009950.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/6444/pencil-typography-black-design.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -531,7 +603,11 @@ const courses = [
     {
         name: "Strategi Bisnis",
         category: "marketing",
-        lecturer: "Raymond Chin",
+        lecturer: {
+            id: 19,
+            name: "Raymond Chin",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/1/001429.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -561,7 +637,11 @@ const courses = [
     {
         name: "Belajar Digital Marketing",
         category: "marketing",
-        lecturer: "Agusleo Halim",
+        lecturer: {
+            id: 20,
+            name: "Agusleo Halim",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/5/005691.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -591,7 +671,11 @@ const courses = [
     {
         name: "Simple Self Improvement",
         category: "self development",
-        lecturer: "Michael",
+        lecturer: {
+            id: 21,
+            name: "Michael",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/4/004776.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/6648560/pexels-photo-6648560.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load",
@@ -621,7 +705,11 @@ const courses = [
     {
         name: "Satu Insight",
         category: "self development",
-        lecturer: "Lionel",
+        lecturer: {
+            id: 22,
+            name: "Lionel",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/3/003129.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/3576284/pexels-photo-3576284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -651,7 +739,11 @@ const courses = [
     {
         name: "Starting your Own Business",
         category: "business",
-        lecturer: "Guspa",
+        lecturer: {
+            id: 23,
+            name: "Guspa",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/2/002632.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/1647919/pexels-photo-1647919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -681,7 +773,11 @@ const courses = [
     {
         name: "Grow Your Business",
         category: "business",
-        lecturer: "Brian",
+        lecturer: {
+            id: 24,
+            name: "Brian",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/3/003565.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/926390/pexels-photo-926390.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -711,7 +807,11 @@ const courses = [
     {
         name: "Music Production",
         category: "music",
-        lecturer: "Nathan",
+        lecturer: {
+            id: 25,
+            name: "Nathan",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/1/001467.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -739,7 +839,11 @@ const courses = [
     {
         name: "Growth your next beat",
         category: "music",
-        lecturer: "Servida",
+        lecturer: {
+            id: 26,
+            name: "Servida",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/3/003913.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg?auto=compress&cs=tinysrgb&w=300",
@@ -768,7 +872,11 @@ const courses = [
     {
         name: "Accounting Basics",
         category: "accounting",
-        lecturer: "Stuff",
+        lecturer: {
+            id: 27,
+            name: "Stuff",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/4/004728.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/53621/calculator-calculation-insurance-finance-53621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -798,7 +906,11 @@ const courses = [
     {
         name: "Personal Finance",
         category: "finance",
-        lecturer: "Matt",
+        lecturer: {
+            id: 28,
+            name: "Matt",
+            imageUrl: "https://ozgrozer.github.io/100k-faces/0/5/005321.jpg",
+        },
         totalSections: 2,
         bacgkroundUrl:
             "https://images.pexels.com/photos/3483098/pexels-photo-3483098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",

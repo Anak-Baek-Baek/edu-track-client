@@ -5,12 +5,13 @@ import { CssBaseline, ThemeProvider } from "@mui/material"
 import { theme } from "./lib/mui/theme"
 import { SnackbarProvider } from "notistack"
 import { Suspense, lazy } from "react"
-import ProtectedLayout from "./layout/ProtectedLayout"
+
 import RegisterPage from "./pages/Register"
 
 const HomePage = lazy(() => import("./pages/Home"))
 const LoginPage = lazy(() => import("./pages/Login"))
 const CourseDetailPage = lazy(() => import("./pages/CourseDetail"))
+const ProtectedLayout = lazy(() => import("./layout/ProtectedLayout"))
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <Suspense fallback={<h1>loading...</h1>}>

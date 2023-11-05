@@ -1,23 +1,29 @@
 import {
+    Avatar,
     Box,
     Checkbox,
     Divider,
+    Drawer,
     IconButton,
     List,
     ListItem,
     ListItemButton,
+    SwipeableDrawer,
     Typography,
 } from "@mui/material"
-import React from "react"
+import { useState } from "react"
 import { Link, useParams, useSearchParams } from "react-router-dom"
 import courses from "../data/data"
 
 import ExitToAppIcon from "@mui/icons-material/ExitToApp"
+import MenuIcon from "@mui/icons-material/Menu"
 import ReactPlayer from "react-player"
 import Footer from "../component/template/Footer"
 const CourseDetail = () => {
     const { id } = useParams()
     const data = courses?.find(course => course.id === Number(id))
+    const [isShow, setIsShow] = useState(false)
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false)
     const [searchParams, setSearchParams] = useSearchParams()
     const currentSection = searchParams.get("section") ?? 0
     const changeSection = index => {
@@ -34,7 +40,7 @@ const CourseDetail = () => {
                 display="flex"
                 alignItems="center"
                 gap={4}
-                padding={4}
+                padding={2}
                 bgcolor="rgba(5, 3, 8, 1)"
             >
                 {/* logo */}
@@ -47,6 +53,13 @@ const CourseDetail = () => {
                     </Link>
                 </Box> */}
                 {/* judul course */}
+                <IconButton
+                    sx={{ display: { xs: "block", lg: "none" } }}
+                    aria-label="open drawer"
+                    onClick={() => setIsDrawerOpen(true)}
+                >
+                    <MenuIcon sx={{ color: "white" }} />
+                </IconButton>
                 <Typography variant="h6" color="white">
                     {data.name}
                 </Typography>
@@ -93,12 +106,38 @@ const CourseDetail = () => {
                     </Box>
                     <Typography variant="h5">{data.section[currentSection].title}</Typography>
                     <Divider />
-                    <Typography variant="body1">
-                        {data.section[currentSection].description}
-                    </Typography>
+                    <Box display="flex" alignItems="center" gap={2}>
+                        <Avatar src={data.lecturer.imageUrl} />
+                        <Typography variant="h6">{data.lecturer.name}</Typography>
+                    </Box>
                     <Divider />
-                    <Box>
-                        <Typography variant="h3">about lecturer</Typography>
+                    <Box
+                        sx={{
+                            "mask-image": isShow
+                                ? ""
+                                : "linear-gradient(180deg, rgba(0, 0, 0, 1), transparent 100%)",
+                        }}
+                        overflow="hidden"
+                    >
+                        <Typography
+                            variant="body1"
+                            fontSize="larger"
+                            maxHeight={isShow ? "fit-content" : "3rem"}
+                        >
+                            {data.section[currentSection].description}
+                        </Typography>
+                    </Box>
+                    <Box
+                        display="flex"
+                        justifyContent="center"
+                        width="100%"
+                        height={36}
+                        sx={{ cursor: "pointer" }}
+                        onClick={() => setIsShow(prev => !prev)}
+                    >
+                        <Typography variant="body1" fontSize="larger">
+                            tampilkan lebih {isShow ? "sedikit" : "banyak"}
+                        </Typography>
                     </Box>
                 </Box>
                 {/* sidebar */}
@@ -136,6 +175,51 @@ const CourseDetail = () => {
                 </List>
             </Box>
             <Footer />
+
+            {/* tablet drawer */}
+            <SwipeableDrawer
+                anchor="left"
+                variant="temporary"
+                open={isDrawerOpen}
+                onClose={() => setIsDrawerOpen(false)}
+                sx={{ width: "50%" }}
+            >
+                <List
+                    sx={{
+                        borderLeft: "1px solid GrayText",
+                    }}
+                >
+                    {data.section.map((section, index) => (
+                        <ListItem key={index} disablePadding sx={{ cursor: "pointer" }}>
+                            <ListItemButton
+                                onClick={() => {
+                                    changeSection(index)
+                                    setIsDrawerOpen(false)
+                                }}
+                            >
+                                <Checkbox inputProps={{ "aria-label": "completedIcon" }} disabled />
+                                <Typography
+                                    sx={{
+                                        color:
+                                            Number(currentSection) === index ? "black" : "GrayText",
+                                        transition: "all .2s",
+                                        ":hover": {
+                                            color: "black",
+                                        },
+                                        display: "-webkit-box",
+                                        " -webkit-line-clamp": 2,
+                                        " -webkit-box-orient": "vertical",
+                                        overflow: "hidden",
+                                        width: "30ch",
+                                    }}
+                                >
+                                    {section.title}
+                                </Typography>
+                            </ListItemButton>
+                        </ListItem>
+                    ))}
+                </List>
+            </SwipeableDrawer>
         </Box>
     )
 }

@@ -33,10 +33,11 @@ const Home = () => {
                     {recomendedCourse.map((course, index) => (
                         <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
                             <CourseCard
+                                custom={index}
                                 title={course.name}
                                 totalSection={course.totalSections}
                                 progressPercent={80}
-                                lecturer={course.lecturer}
+                                lecturer={course.lecturer.name}
                                 imageUrl={course.bacgkroundUrl}
                                 id={course.id}
                             />

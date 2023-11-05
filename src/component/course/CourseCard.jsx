@@ -17,23 +17,26 @@ import { MenuBook } from "@mui/icons-material"
 import { useEffect, useState } from "react"
 import "./courseCard.css"
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 const CourseCard = props => {
-    const { imageUrl, title, lecturer, totalSection, progressPercent, id } = props
+    const { imageUrl, title, lecturer, totalSection, progressPercent, id, ...prop } = props
     const [progress, setProgress] = useState(0)
+    const MotionCard = motion(Card)
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setProgress(progressPercent)
-        }, 1000)
+    const cardVariant = {
+        hidden: { opacity: 0, x: -10 },
+        visible: index => ({
+            opacity: 1,
+            x: 0,
+            transition: {
+                delay: index * 0.1,
+            },
+        }),
+    }
 
-        return () => {
-            clearInterval(timer)
-        }
-    }, [])
     return (
-        <Card
+        <MotionCard
             variant="outlined"
-            className="fade-in"
             sx={{
                 padding: "0.625rem",
                 width: "100%",
@@ -51,6 +54,10 @@ const CourseCard = props => {
                     boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
                 },
             }}
+            variants={cardVariant}
+            initial="hidden"
+            animate="visible"
+            {...prop}
         >
             <CardActionArea LinkComponent={Link} to={`course/${id}`} sx={{ overflow: "hidden" }}>
                 <CardMedia
@@ -85,25 +92,25 @@ const CourseCard = props => {
                     <Box display="flex" flexDirection="column" gap={1}>
                         <LinearProgress
                             variant="determinate"
-                            value={progress}
+                            value={progressPercent}
                             sx={{ borderRadius: 100, height: 8 }}
                             color={
-                                progress < 30
+                                progressPercent < 30
                                     ? "info"
-                                    : progress < 70
+                                    : progressPercent < 70
                                     ? "primary"
-                                    : progress < 100
+                                    : progressPercent < 100
                                     ? "success"
                                     : "inherit"
                             }
                         />
                         <Typography variant="p" fontSize="larger">
-                            {progress}% completed
+                            {progressPercent}% completed
                         </Typography>
                     </Box>
                 </CardContent>
             </CardActionArea>
-        </Card>
+        </MotionCard>
     )
 }
 
