@@ -6,9 +6,13 @@ import section2Asset from "../assets/section2.gif"
 import LogoIcon from "../component/icon/Logo"
 import CategoryCard from "../component/category/CategoryCard"
 import categoryAsset from "../assets/category.png"
+import courses from "../data/data"
+import getRandomCourse from "../utils/getRandomCourse"
+import Footer from "../component/template/Footer"
 const thisYear = new Date().getFullYear()
 
 const Home = () => {
+    const recomendedCourse = getRandomCourse(8)
     return (
         <>
             <Box
@@ -26,13 +30,16 @@ const Home = () => {
                 </Typography>
                 {/* course cards */}
                 <Grid2 container columns={12} spacing={4}>
-                    {Array.from(Array(8)).map((_, index) => (
+                    {recomendedCourse.map((course, index) => (
                         <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
                             <CourseCard
-                                title="computer science asdoasdoijosda doasijdoasjodjasoi doasjodasjoij"
-                                totalSection={5}
+                                custom={index}
+                                title={course.name}
+                                totalSection={course.totalSections}
                                 progressPercent={80}
-                                lecturer="john"
+                                lecturer={course.lecturer.name}
+                                imageUrl={course.bacgkroundUrl}
+                                id={course.id}
                             />
                         </Grid2>
                     ))}
@@ -121,23 +128,7 @@ const Home = () => {
                     </Box>
                     <img src={section2Asset} height="min(50%,450)" />
                 </Box>
-                <Box
-                    component="footer"
-                    display="flex"
-                    padding={4}
-                    justifyContent="space-between"
-                    alignItems="center"
-                    height={120}
-                    bgcolor="#100"
-                >
-                    <Box display="flex" gap={1} alignItems="center">
-                        <LogoIcon fontSize="large" />
-                        <Typography variant="h5" color="white" fontWeight="bold">
-                            edutrack.
-                        </Typography>
-                    </Box>
-                    <Typography color="white">&copy; {thisYear} edutech.tech </Typography>
-                </Box>
+                <Footer />
             </Box>
         </>
     )
