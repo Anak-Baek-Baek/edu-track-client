@@ -2,8 +2,11 @@ import { createTheme } from "@mui/material"
 
 export const theme = createTheme({
     palette: {
+        secondary: {
+            main: "#6A00FF",
+        },
         background: {
-            default: "rgba(254, 249, 239, 1)",
+            default: "rgba(245, 249, 255, 1)",
         },
         accent: {
             main: "rgba(162, 210, 255, 1)",
@@ -27,6 +30,9 @@ export const theme = createTheme({
             '"Segoe UI Symbol"',
         ].join(","),
         fontSize: 12,
+        allVariants: {
+            color: "rgba(5, 3, 8, 1)",
+        },
     },
 
     components: {

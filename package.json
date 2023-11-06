@@ -12,11 +12,19 @@
     "dependencies": {
         "@emotion/react": "^11.11.1",
         "@emotion/styled": "^11.11.0",
+        "@formkit/auto-animate": "^0.8.0",
         "@mui/icons-material": "^5.14.13",
         "@mui/material": "^5.14.13",
+        "firebase": "^10.5.0",
+        "framer-motion": "^10.16.4",
+        "notistack": "^3.0.1",
+        "prop-types": "^15.8.1",
         "react": "^17.0.0 || ^18.0.0",
         "react-dom": "^17.0.0 || ^18.0.0",
+        "react-firebase-hooks": "^5.1.1",
         "react-helmet": "^6.1.0",
+        "react-hook-form": "^7.47.0",
+        "react-player": "^2.13.0",
         "react-router-dom": "^6.16.0"
     },
     "peerDependencies": {
@@ -31,6 +39,6 @@
         "eslint-plugin-react": "^7.32.2",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.3",
-        "vite": "^4.4.5"
+        "vite": "^4.5.0"
     }
 }

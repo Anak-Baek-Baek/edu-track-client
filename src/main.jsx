@@ -1,21 +1,33 @@
-import React from "react"
 import ReactDOM from "react-dom/client"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import routes from "./routes"
+
 import { CssBaseline, ThemeProvider } from "@mui/material"
 import { theme } from "./lib/mui/theme"
+import { SnackbarProvider } from "notistack"
+import { Suspense, lazy } from "react"
+
+const HomePage = lazy(() => import("./pages/Home"))
+const LoginPage = lazy(() => import("./pages/Login"))
+const CourseDetailPage = lazy(() => import("./pages/CourseDetail"))
+const ProtectedLayout = lazy(() => import("./layout/ProtectedLayout"))
+const RegisterPage = lazy(() => import("./pages/Register"))
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
+    <Suspense fallback={<h1>loading...</h1>}>
         <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <BrowserRouter>
-                <Routes>
-                    {routes.map(({ component, path }, idx) => (
-                        <Route path={path} Component={component} key={idx} />
-                    ))}
-                </Routes>
-            </BrowserRouter>
+            <SnackbarProvider maxSnack={4}>
+                <CssBaseline />
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<ProtectedLayout />}>
+                            <Route index Component={HomePage} />
+                        </Route>
+                        <Route path="/login" Component={LoginPage} />
+                        <Route path="/register" Component={RegisterPage} />
+                        <Route path="course/:id" Component={CourseDetailPage} />
+                    </Routes>
+                </BrowserRouter>
+            </SnackbarProvider>
         </ThemeProvider>
-    </React.StrictMode>
+    </Suspense>
 )
