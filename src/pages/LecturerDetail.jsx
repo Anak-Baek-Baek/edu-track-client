@@ -21,6 +21,7 @@ const LecturerDetail = () => {
                 gap: 4,
             }}
         >
+
             <Box
                 display="flex"
                 alignItems={{ xs: "center", md: "flex-start" }}
@@ -48,7 +49,9 @@ const LecturerDetail = () => {
                 </Typography>
                 <Grid2 mt={2} container columns={12} spacing={4}>
                     {allLecturerCourse.map((course, index) => (
+
                         <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
+
                             <CourseCard
                                 custom={index}
                                 title={course.name}
