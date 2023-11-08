@@ -21,7 +21,14 @@ const LecturerDetail = () => {
                 gap: 4,
             }}
         >
-            <Box display="flex" alignItems="start" gap={8}>
+
+            <Box
+                display="flex"
+                alignItems={{ xs: "center", md: "flex-start" }}
+                justifyContent={{ xs: "center", md: "flex-start" }}
+                flexDirection={{ xs: "column", md: "row" }}
+                gap={{ xs: 2, md: 8 }}
+            >
                 <Avatar src={findLecturer.imageUrl} sx={{ width: "10rem", height: "auto" }} />
                 <Box display="flex" flexDirection="column" gap=".5rem">
                     <Typography variant="h4">{name}</Typography>
@@ -42,7 +49,9 @@ const LecturerDetail = () => {
                 </Typography>
                 <Grid2 mt={2} container columns={12} spacing={4}>
                     {allLecturerCourse.map((course, index) => (
-                        <Grid2 xs={12} sm={6} lg={4} key={index}>
+
+                        <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
+
                             <CourseCard
                                 custom={index}
                                 title={course.name}
