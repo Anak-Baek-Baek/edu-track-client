@@ -4,8 +4,11 @@ import SearchBarInput from "./SearchBarInput"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { auth } from "../../config/firebase"
 import Person4Icon from "@mui/icons-material/Person4"
+import { useNavigate } from "react-router-dom"
+import Loading from "./Loading"
 const Navbar = () => {
     const [user] = useAuthState(auth)
+    const navigate = useNavigate()
     return (
         <AppBar
             component="nav"
@@ -18,7 +21,13 @@ const Navbar = () => {
             }}
         >
             <Toolbar sx={{ padding: 3, justifyContent: "space-between" }}>
-                <Box display="flex" gap={1} alignItems="center">
+                <Box
+                    display="flex"
+                    gap={1}
+                    alignItems="center"
+                    sx={{ cursor: "pointer" }}
+                    onClick={() => navigate("/")}
+                >
                     <LogoIcon fontSize="large" />
                     <Typography variant="h5" fontWeight="bold">
                         edutrack.

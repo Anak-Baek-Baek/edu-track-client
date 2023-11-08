@@ -59,7 +59,7 @@ const CourseCard = props => {
             animate="visible"
             {...prop}
         >
-            <CardActionArea LinkComponent={Link} to={`course/${id}`} sx={{ overflow: "hidden" }}>
+            <CardActionArea LinkComponent={Link} to={`/course/${id}`} sx={{ overflow: "hidden" }}>
                 <CardMedia
                     sx={{
                         height: 160,

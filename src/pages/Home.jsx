@@ -128,7 +128,6 @@ const Home = () => {
                     </Box>
                     <img src={section2Asset} height="min(50%,450)" />
                 </Box>
-                <Footer />
             </Box>
         </>
     )

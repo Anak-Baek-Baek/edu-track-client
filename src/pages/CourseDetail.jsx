@@ -12,7 +12,7 @@ import {
     Typography,
 } from "@mui/material"
 import { useState } from "react"
-import { Link, useParams, useSearchParams } from "react-router-dom"
+import { Link, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom"
 import courses from "../data/data"
 
 import ExitToAppIcon from "@mui/icons-material/ExitToApp"
@@ -25,6 +25,7 @@ const CourseDetail = () => {
     const [isShow, setIsShow] = useState(false)
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
     const [searchParams, setSearchParams] = useSearchParams()
+    const navigate = useNavigate()
     const currentSection = searchParams.get("section") ?? 0
     const changeSection = index => {
         setSearchParams(params => {
@@ -106,7 +107,12 @@ const CourseDetail = () => {
                     </Box>
                     <Typography variant="h5">{data.section[currentSection].title}</Typography>
                     <Divider />
-                    <Box display="flex" alignItems="center" gap={2}>
+
+                    <Box
+                        gap={2}
+                        sx={{ cursor: "pointer", display: "flex", alignItems: "center" }}
+                        onClick={() => navigate(`/lecturer/${data.lecturer.name}`)}
+                    >
                         <Avatar src={data.lecturer.imageUrl} />
                         <Typography variant="h6">{data.lecturer.name}</Typography>
                     </Box>
