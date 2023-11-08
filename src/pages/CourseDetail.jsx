@@ -119,7 +119,7 @@ const CourseDetail = () => {
                     <Divider />
                     <Box
                         sx={{
-                            "mask-image": isShow
+                            maskImage: isShow
                                 ? ""
                                 : "linear-gradient(180deg, rgba(0, 0, 0, 1), transparent 100%)",
                         }}
@@ -188,6 +188,7 @@ const CourseDetail = () => {
                 variant="temporary"
                 open={isDrawerOpen}
                 onClose={() => setIsDrawerOpen(false)}
+                onOpen={() => setIsDrawerOpen(true)}
                 sx={{ width: "50%" }}
             >
                 <List

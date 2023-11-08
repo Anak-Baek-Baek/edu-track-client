@@ -4,11 +4,16 @@ import SearchBarInput from "./SearchBarInput"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { auth } from "../../config/firebase"
 import Person4Icon from "@mui/icons-material/Person4"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import Loading from "./Loading"
 const Navbar = () => {
     const [user] = useAuthState(auth)
     const navigate = useNavigate()
+    const location = useLocation()
+    const handleNavigate = () => {
+        if (location.pathname === "/") return
+        navigate("/")
+    }
     return (
         <AppBar
             component="nav"
@@ -26,7 +31,7 @@ const Navbar = () => {
                     gap={1}
                     alignItems="center"
                     sx={{ cursor: "pointer" }}
-                    onClick={() => navigate("/")}
+                    onClick={handleNavigate}
                 >
                     <LogoIcon fontSize="large" />
                     <Typography variant="h5" fontWeight="bold">
