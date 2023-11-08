@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material"
 import React from "react"
 import LogoIcon from "../icon/Logo"
+import Loading from "./Loading"
 const thisYear = new Date().getFullYear()
 
 const Footer = () => {
@@ -20,6 +21,7 @@ const Footer = () => {
                     edutrack.
                 </Typography>
             </Box>
+
             <Typography color="white">&copy; {thisYear} edutech.tech </Typography>
         </Box>
     )
