@@ -3,6 +3,7 @@ import { auth } from "../config/firebase"
 import { Box } from "@mui/material"
 import Navbar from "../component/template/Navbar"
 import { useAuthState } from "react-firebase-hooks/auth"
+import Footer from "../component/template/Footer"
 
 const ProtectedLayout = () => {
     const [user, loading] = useAuthState(auth)
@@ -15,6 +16,7 @@ const ProtectedLayout = () => {
             <Box component="main">
                 <Outlet />
             </Box>
+            <Footer />
         </>
     )
 }
