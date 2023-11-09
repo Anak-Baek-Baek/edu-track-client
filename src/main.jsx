@@ -10,6 +10,7 @@ import RegisterPage from "./pages/Register"
 
 const HomePage = lazy(() => import("./pages/Home"))
 const LoginPage = lazy(() => import("./pages/Login"))
+const SearchPage = lazy(() => import("./pages/SearchResults"))
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <Suspense fallback={<h1>loading...</h1>}>
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                         </Route>
                         <Route path="/login" Component={LoginPage} />
                         <Route path="/register" Component={RegisterPage} />
+                        <Route path="/search" Component={SearchPage} />
                     </Routes>
                 </BrowserRouter>
             </SnackbarProvider>

@@ -1,4 +1,4 @@
-const Course = [
+export const Course = [
   {
     name: "Belajar React",
     category: "development",
