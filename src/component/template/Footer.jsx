@@ -14,6 +14,7 @@ const Footer = () => {
             alignItems="center"
             height={120}
             bgcolor="#100"
+            mt="auto"
         >
             <Box display={{ xs: "none", sm: "flex" }} gap={1} alignItems="center">
                 <LogoIcon fontSize="large" />

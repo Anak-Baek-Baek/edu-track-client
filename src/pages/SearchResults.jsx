@@ -1,81 +1,58 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
-import Navbar from "../component/template/Navbar";
-import { Box, Typography, List, ListItem, ListItemText } from "@mui/material";
-import LogoIcon from "../component/icon/Logo";
-const thisYear = new Date().getFullYear();
+import React from "react"
+import { useLocation, useNavigate } from "react-router-dom"
+import Navbar from "../component/template/Navbar"
+import { Box, Typography, List, ListItem, ListItemText, Divider, Button } from "@mui/material"
+import LogoIcon from "../component/icon/Logo"
+import courses from "../data/data"
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
+import CourseCard from "../component/course/CourseCard"
 
 const SearchResults = () => {
-  const location = useLocation();
-  const searchQuery = new URLSearchParams(location.search).get("q");
+    const location = useLocation()
+    const searchQuery = new URLSearchParams(location.search).get("q")
+    const navigate = useNavigate()
+    const searchResults = courses.filter(course =>
+        course.name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
 
-  const courses = [
-    { id: 1, name: "Course 1" },
-    { id: 2, name: "Course 2" },
-  ];
-
-  const searchResults = courses.filter((course) =>
-    course.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
-  return (
-    <div>
-      <Navbar />
-      <h1>Search Results for "{searchQuery}"</h1>
-      <hr style={{marginLeft: 200, marginRight: 200, marginBottom: 50}}/>
-      {searchResults.length > 0 ? (
-        <List>
-          {searchResults.map((result) => (
-            <ListItem key={result.id}>
-              <ListItemText primary={result.name} />
-            </ListItem>
-          ))}
-        </List>
-      ) : (
-        <p style={{ textAlign: "center", marginTop: "30px" }}>
-          No results found for "{searchQuery}"
-        </p>
-      )}
-      <hr style={{marginLeft: 200, marginRight: 200, marginTop: 50, marginBottom: 50}}/>
-      <hr style={{marginLeft: 200, marginRight: 200, marginTop: 50, marginBottom: 50}}/>
-      <Box
-        bgcolor="#100"
-        padding={4}
-        component="footer"
-        height="100%"
-        color={"white"}
-      >
-        <Box display={"flex"} marginRight="20px">
-          <Box component="ul" style={{ listStyleType: "none", padding: 0}}>
-            <li>Teach on edutrack.</li>
-            <li>About us</li>
-            <li>Contact us</li>
-            <li>Blog</li>
-          </Box>
-          <Box component="ul" style={{ listStyleType: "none", marginLeft: 50}}>
-            <li>Help and Support</li>
-            <li>Terms</li>
-            <li>Privacy policy</li>
-            <li>Cookie settings</li>
-          </Box>
-        </Box>
+    return (
         <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          height={120}
+            sx={{
+                width: "min(95%,1440px)",
+                mx: "auto",
+                p: 4,
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+            }}
         >
-          <Box display="flex" gap={1} alignItems="center">
-            <LogoIcon fontSize="large" />
-            <Typography variant="h5" color="white" fontWeight="bold">
-              edutrack.
-            </Typography>
-          </Box>
-          <Typography color="white">&copy; {thisYear} edutech.tech </Typography>
+            <h1>Search Results for &quot;{searchQuery}&quot;</h1>
+            <Divider />
+            {searchResults.length > 0 ? (
+                <Grid2 container columns={12} spacing={4}>
+                    {searchResults.map((course, index) => (
+                        <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
+                            <CourseCard
+                                custom={index}
+                                title={course.name}
+                                totalSection={course.totalSections}
+                                progressPercent={80}
+                                lecturer={course.lecturer.name}
+                                imageUrl={course.bacgkroundUrl}
+                                id={course.id}
+                            />
+                        </Grid2>
+                    ))}
+                </Grid2>
+            ) : (
+                <Box display="flex" flexDirection="column" gap={2} alignItems="center">
+                    <Typography> No results found for &quot;{searchQuery}&quot;</Typography>
+                    <Button onClick={() => navigate("/")}>back</Button>
+                </Box>
+            )}
+            <Divider />
         </Box>
-      </Box>
-    </div>
-  );
-};
+    )
+}
 
-export default SearchResults;
+export default SearchResults
