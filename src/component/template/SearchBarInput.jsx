@@ -10,7 +10,7 @@ import {
   ListItem,
   ClickAwayListener,
 } from "@mui/material";
-import { Course } from "../../data/data";
+import courses from "../../data/data";
 import { useNavigate } from "react-router-dom";
 
 const SearchBarInput = () => {
@@ -25,7 +25,7 @@ const SearchBarInput = () => {
     setSearchQuery(query);
 
     if (query) {
-      const filteredResults = Course.filter((course) =>
+      const filteredResults = courses.filter((course) =>
         course.name.toLowerCase().includes(query)
       ).slice(0, 10);
 
@@ -110,7 +110,8 @@ const SearchBarInput = () => {
       </Box>
 
       <Popper open={showAutocomplete} anchorEl={document.getElementById("search-input")}>
-        <Paper style={{ width: 400, textAlign: "center" }}>
+        <Paper style={{ width: 400, textAlign: "center" }}
+        sx={{zIndex: "1000"}}>
           <ClickAwayListener onClickAway={handleClickAway}>
             {searchResults.length > 0 ? (
               <List>
@@ -130,7 +131,7 @@ const SearchBarInput = () => {
                 ))}
               </List>
             ) : (
-              <p>Course not found</p>
+              <p>course not found</p>
             )}
           </ClickAwayListener>
         </Paper>
