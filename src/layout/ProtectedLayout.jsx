@@ -11,13 +11,13 @@ const ProtectedLayout = () => {
         return <Navigate to="/login" replace />
     }
     return (
-        <>
+        <Box minHeight="100vh" display="flex" flexDirection="column">
             <Navbar />
             <Box component="main">
                 <Outlet />
             </Box>
             <Footer />
-        </>
+        </Box>
     )
 }
 
