@@ -1,15 +1,17 @@
-import { useLocation, useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { Box, Typography, Divider, Button } from "@mui/material"
 import courses from "../data/data"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import CourseCard from "../component/course/CourseCard"
+import { useNavigate } from "react-router-dom"
 
-const SearchResults = () => {
-    const location = useLocation()
-    const searchQuery = new URLSearchParams(location.search).get("q")
+const CategoryPage = () => {
+    const { category } = useParams()
+
     const navigate = useNavigate()
-    const searchResults = courses.filter(course =>
-        course.name.toLowerCase().includes(searchQuery.toLowerCase())
+    const categoryArr = category.split(" ")
+    const filteredCourses = courses.filter(course =>
+        categoryArr.some(cat => course.category.toLowerCase() === cat.toLowerCase())
     )
 
     return (
@@ -23,11 +25,13 @@ const SearchResults = () => {
                 gap: 2,
             }}
         >
-            <h1>Search Results for &quot;{searchQuery}&quot;</h1>
+            <Typography variant="h4" fontWeight="700">
+                {category} Courses
+            </Typography>
             <Divider />
-            {searchResults.length > 0 ? (
+            {filteredCourses.length > 0 ? (
                 <Grid2 container columns={12} spacing={4}>
-                    {searchResults.map((course, index) => (
+                    {filteredCourses.map((course, index) => (
                         <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
                             <CourseCard
                                 custom={index}
@@ -43,13 +47,13 @@ const SearchResults = () => {
                 </Grid2>
             ) : (
                 <Box display="flex" flexDirection="column" gap={2} alignItems="center">
-                    <Typography> No results found for &quot;{searchQuery}&quot;</Typography>
-                    <Button onClick={() => navigate("/")}>back</Button>
+                    <Typography>No courses found for {category}</Typography>
+                    <Button onClick={() => navigate("/")}>Back to Home</Button>
                 </Box>
             )}
             <Divider />
         </Box>
-    );
-};
+    )
+}
 
-export default SearchResults;
+export default CategoryPage

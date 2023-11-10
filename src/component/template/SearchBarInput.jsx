@@ -5,11 +5,11 @@ import {
     IconButton,
     InputBase,
     Paper,
-    Popper,
     List,
     ListItem,
     ClickAwayListener,
-    Popover,
+    Fade,
+    Grow,
 } from "@mui/material"
 import courses from "../../data/data"
 import { useNavigate } from "react-router-dom"
@@ -106,50 +106,53 @@ const SearchBarInput = () => {
                     placeholder="Search courses, teacher, etc"
                     inputProps={{
                         "aria-label": "Search courses, teacher, etc",
-                        autocomplete: "off",
+                        autoComplete: "off",
                     }}
                     onChange={handleSearch}
                     value={searchQuery}
                 />
             </Box>
-            <Paper
-                elevation={0}
-                sx={{
-                    position: "absolute",
-                    display: showAutocomplete ? "block" : "none",
-                    left: 0,
-                    right: 0,
-                    mt: 2,
-                }}
-            >
-                <ClickAwayListener onClickAway={handleClickAway}>
-                    <List>
-                        {isLoading ? (
-                            <ListItem>loading...</ListItem>
-                        ) : debouncedValue.length > 0 && searchQuery ? (
-                            <>
-                                {debouncedValue.map((result, index) => (
-                                    <ListItem
-                                        key={index}
-                                        onClick={() => handleItemClick(result)}
-                                        onMouseEnter={() => handleMouseEnter(result)}
-                                        onMouseLeave={handleMouseLeave}
-                                        style={{
-                                            cursor: "pointer",
-                                            background:
-                                                selectedItem === result ? "#f0f0f0" : "transparent",
-                                        }}
-                                    >
-                                        {renderHighlightedText(result.name, searchQuery)}
-                                    </ListItem>
-                                ))}
-                            </>
-                        ) : (
-                            <ListItem>course not found</ListItem>
-                        )}
-                    </List>
-                </ClickAwayListener>
-            </Paper>
+            <Grow in={showAutocomplete}>
+                <Paper
+                    elevation={0}
+                    sx={{
+                        position: "absolute",
+                        left: 0,
+                        right: 0,
+                        mt: 2,
+                    }}
+                >
+                    <ClickAwayListener onClickAway={handleClickAway}>
+                        <List>
+                            {isLoading ? (
+                                <ListItem>loading...</ListItem>
+                            ) : debouncedValue.length > 0 && searchQuery ? (
+                                <>
+                                    {debouncedValue.map((result, index) => (
+                                        <ListItem
+                                            key={index}
+                                            onClick={() => handleItemClick(result)}
+                                            onMouseEnter={() => handleMouseEnter(result)}
+                                            onMouseLeave={handleMouseLeave}
+                                            style={{
+                                                cursor: "pointer",
+                                                background:
+                                                    selectedItem === result
+                                                        ? "#f0f0f0"
+                                                        : "transparent",
+                                            }}
+                                        >
+                                            {renderHighlightedText(result.name, searchQuery)}
+                                        </ListItem>
+                                    ))}
+                                </>
+                            ) : (
+                                <ListItem>course not found</ListItem>
+                            )}
+                        </List>
+                    </ClickAwayListener>
+                </Paper>
+            </Grow>
         </Box>
     )
 }

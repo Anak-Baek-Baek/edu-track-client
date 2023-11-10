@@ -14,6 +14,7 @@ const ProtectedLayout = lazy(() => import("./layout/ProtectedLayout"))
 const RegisterPage = lazy(() => import("./pages/Register"))
 const LecturerDetailPage = lazy(() => import("./pages/LecturerDetail"))
 const SearchResult = lazy(() => import("./pages/SearchResults"))
+const CategoryPage = lazy(() => import("./pages/CategoryPage"))
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <Suspense fallback={<Loading />}>
@@ -26,6 +27,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                             <Route index Component={HomePage} />
                             <Route path="lecturer/:name" Component={LecturerDetailPage} />
                             <Route path="search" Component={SearchResult} />
+                            <Route path="category/:category" element={<CategoryPage />} />
                         </Route>
                         <Route path="/login" Component={LoginPage} />
                         <Route path="/register" Component={RegisterPage} />
