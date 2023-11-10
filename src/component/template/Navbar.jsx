@@ -19,7 +19,7 @@ import { auth } from "../../config/firebase"
 import Person4Icon from "@mui/icons-material/Person4"
 import { useLocation, useNavigate } from "react-router-dom"
 import { useState } from "react"
-import { Logout, Try } from "@mui/icons-material"
+import { Logout } from "@mui/icons-material"
 import { signOut } from "firebase/auth"
 import { useSnackbar } from "notistack"
 const Navbar = () => {

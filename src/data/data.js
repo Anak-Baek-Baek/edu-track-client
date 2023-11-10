@@ -670,7 +670,7 @@ const courses = [
     },
     {
         name: "Simple Self Improvement",
-        category: "self development",
+        category: "selfDevelopment",
         lecturer: {
             id: 21,
             name: "Michael",
@@ -704,7 +704,7 @@ const courses = [
     },
     {
         name: "Satu Insight",
-        category: "self development",
+        category: "selfDevelopment",
         lecturer: {
             id: 22,
             name: "Lionel",
@@ -871,7 +871,7 @@ const courses = [
     },
     {
         name: "Accounting Basics",
-        category: "accounting",
+        category: "finance",
         lecturer: {
             id: 27,
             name: "Stuff",

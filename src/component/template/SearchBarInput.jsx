@@ -5,11 +5,9 @@ import {
     IconButton,
     InputBase,
     Paper,
-    Popper,
     List,
     ListItem,
     ClickAwayListener,
-    Popover,
 } from "@mui/material"
 import courses from "../../data/data"
 import { useNavigate } from "react-router-dom"
@@ -106,7 +104,7 @@ const SearchBarInput = () => {
                     placeholder="Search courses, teacher, etc"
                     inputProps={{
                         "aria-label": "Search courses, teacher, etc",
-                        autocomplete: "off",
+                        autoComplete: "off",
                     }}
                     onChange={handleSearch}
                     value={searchQuery}

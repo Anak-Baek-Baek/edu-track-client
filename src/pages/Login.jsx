@@ -99,8 +99,7 @@ const LoginPage = () => {
                             <Typography
                                 variant="h6"
                                 color="GrayText"
-                                fontWeight="
-                    bold"
+                                fontWeight="bold"
                             >
                                 welcome back to edutrack!
                             </Typography>

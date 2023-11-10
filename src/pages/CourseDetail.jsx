@@ -3,7 +3,6 @@ import {
     Box,
     Checkbox,
     Divider,
-    Drawer,
     IconButton,
     List,
     ListItem,
@@ -12,7 +11,7 @@ import {
     Typography,
 } from "@mui/material"
 import { useState } from "react"
-import { Link, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom"
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom"
 import courses from "../data/data"
 
 import ExitToAppIcon from "@mui/icons-material/ExitToApp"

@@ -1,8 +1,5 @@
-import React from "react"
 import { useLocation, useNavigate } from "react-router-dom"
-import Navbar from "../component/template/Navbar"
-import { Box, Typography, List, ListItem, ListItemText, Divider, Button } from "@mui/material"
-import LogoIcon from "../component/icon/Logo"
+import { Box, Typography, Divider, Button } from "@mui/material"
 import courses from "../data/data"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import CourseCard from "../component/course/CourseCard"
@@ -52,7 +49,7 @@ const SearchResults = () => {
             )}
             <Divider />
         </Box>
-    )
-}
+    );
+};
 
-export default SearchResults
+export default SearchResults;

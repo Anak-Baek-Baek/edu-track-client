@@ -1,20 +1,17 @@
 /* eslint-disable react/prop-types */
 import {
     Box,
-    Button,
     Card,
     CardActionArea,
-    CardActions,
     CardContent,
     CardMedia,
-    Grow,
     IconButton,
     LinearProgress,
     Typography,
 } from "@mui/material"
 import exampleImage from "../../assets/example.jpg"
 import { MenuBook } from "@mui/icons-material"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import "./courseCard.css"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
