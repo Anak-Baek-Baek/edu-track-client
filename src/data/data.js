@@ -871,7 +871,7 @@ const courses = [
     },
     {
         name: "Accounting Basics",
-        category: "finance",
+        category: "accounting",
         lecturer: {
             id: 27,
             name: "Stuff",
