@@ -63,7 +63,7 @@ const CourseCard = props => {
                         borderRadius: ".5rem",
                     }}
                     image={imageUrl || exampleImage}
-                    title="green iguana"
+                    title={title}
                 />
                 <CardContent sx={{ padding: 0, display: "flex", flexDirection: "column", gap: 2 }}>
                     <Box>
