@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Search } from "@mui/icons-material"
+import { Close, ExitToAppRounded, Search } from "@mui/icons-material"
 import {
     Box,
     IconButton,
@@ -15,7 +15,7 @@ import courses from "../../data/data"
 import { useNavigate } from "react-router-dom"
 import useDebounce from "../../hooks/useDebounce"
 
-const SearchBarInput = () => {
+const SearchBarInput = ({ w, onModalClose }) => {
     const navigate = useNavigate()
     const [searchResults, setSearchResults] = useState([])
     const [searchQuery, setSearchQuery] = useState("")
@@ -45,6 +45,7 @@ const SearchBarInput = () => {
         setSearchQuery(result.name)
         setSelectedItem(result)
         setShowAutocomplete(false)
+        onModalClose && onModalClose()
         navigate(`/search?q=${encodeURIComponent(result.name)}`)
     }
 
@@ -87,7 +88,7 @@ const SearchBarInput = () => {
                     p: "2px 4px",
                     display: "flex",
                     alignItems: "center",
-                    width: 400,
+                    width: w ?? 600,
                     border: "2px solid #E7E7E7",
                     borderRadius: "3.125rem",
                     bgcolor: "white",
@@ -111,7 +112,15 @@ const SearchBarInput = () => {
                     onChange={handleSearch}
                     value={searchQuery}
                 />
+                <IconButton
+                    sx={{ p: "10px", display: { xs: "flex", sm: "none" } }}
+                    aria-label="menu"
+                    onClick={onModalClose}
+                >
+                    <Close />
+                </IconButton>
             </Box>
+
             <Grow in={showAutocomplete}>
                 <Paper
                     elevation={0}
