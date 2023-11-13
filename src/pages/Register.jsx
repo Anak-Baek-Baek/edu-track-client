@@ -155,6 +155,7 @@ const RegisterPage = () => {
                             type="submit"
                             variant="contained"
                             size="large"
+                            sx={{ borderRadius: 100 }}
                             fullWidth
                         >
                             Register
@@ -165,6 +166,7 @@ const RegisterPage = () => {
                             variant="outlined"
                             color="primary"
                             size="large"
+                            sx={{ borderRadius: 100 }}
                             fullWidth
                             onClick={handleGoogleLogin}
                         >

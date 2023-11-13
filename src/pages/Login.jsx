@@ -96,11 +96,7 @@ const LoginPage = () => {
                             <Typography variant="h3" fontWeight="800">
                                 Login
                             </Typography>
-                            <Typography
-                                variant="h6"
-                                color="GrayText"
-                                fontWeight="bold"
-                            >
+                            <Typography variant="h6" color="GrayText" fontWeight="bold">
                                 welcome back to edutrack!
                             </Typography>
                         </Stack>
@@ -134,14 +130,6 @@ const LoginPage = () => {
                                     }
                                 />
                             </FormControl>
-                            <Link
-                                href="/"
-                                alignSelf="self-end"
-                                textTransform="capitalize"
-                                fontWeight="bold"
-                            >
-                                forgot password?
-                            </Link>
                         </Stack>
                         <Button
                             color="secondary"
