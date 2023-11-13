@@ -43,7 +43,7 @@ const RegisterPage = () => {
 
     const onSubmit = async ({ email, password }) => {
         try {
-            const res = await createUserWithEmailAndPassword(auth, email, password)
+            await createUserWithEmailAndPassword(auth, email, password)
             enqueueSnackbar("success register", {
                 variant: "success",
                 anchorOrigin: { horizontal: "right", vertical: "top" },
@@ -106,7 +106,7 @@ const RegisterPage = () => {
                             <InputLabel htmlFor="email">Email</InputLabel>
                             <OutlinedInput
                                 {...register("email", {
-                                    required: { message: "password is required" },
+                                    required: { message: "email wajib diisi" },
                                 })}
                                 type="email"
                                 label="email"
@@ -126,7 +126,8 @@ const RegisterPage = () => {
                                     {...register("password", {
                                         pattern: {
                                             value: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/,
-                                            message: "Password must meet the required pattern",
+                                            message:
+                                                "Password harus memiliki 1 huruf besar dan 1 simbol",
                                         },
                                         required: { message: "password is required" },
                                     })}
@@ -144,10 +145,10 @@ const RegisterPage = () => {
                                     }
                                 />
                                 {errors.password ? (
-                                    <FormHelperText>{errors.password.message}</FormHelperText>
-                                ) : (
-                                    ""
-                                )}
+                                    <FormHelperText sx={{ color: "red", ml: 0 }}>
+                                        {errors.password.message}
+                                    </FormHelperText>
+                                ) : null}
                             </FormControl>
                         </Stack>
                         <Button

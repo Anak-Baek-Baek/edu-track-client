@@ -4,6 +4,7 @@ import {
     Divider,
     Fade,
     FormControl,
+    FormHelperText,
     IconButton,
     InputAdornment,
     InputLabel,
@@ -104,10 +105,20 @@ const LoginPage = () => {
                             <InputLabel htmlFor="email">Email</InputLabel>
                             <OutlinedInput
                                 id="email"
-                                {...register("email")}
+                                {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: "email wajib diisi",
+                                    },
+                                })}
                                 type="email"
                                 label="email"
                             />
+                            {errors.email ? (
+                                <FormHelperText sx={{ color: "red", ml: 0 }}>
+                                    {errors.email.message}
+                                </FormHelperText>
+                            ) : null}
                         </FormControl>
                         <Stack spacing={1}>
                             <FormControl variant="outlined">
@@ -116,7 +127,14 @@ const LoginPage = () => {
                                     id="password"
                                     type={showPassword ? "text" : "password"}
                                     label="password"
-                                    {...register("password")}
+                                    {...register("password", {
+                                        pattern: {
+                                            value: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/,
+                                            message:
+                                                "Password harus memiliki 1 huruf besar dan 1 simbol",
+                                        },
+                                        required: { message: "password is required" },
+                                    })}
                                     endAdornment={
                                         <InputAdornment position="end">
                                             <IconButton
@@ -129,6 +147,11 @@ const LoginPage = () => {
                                         </InputAdornment>
                                     }
                                 />
+                                {errors.password ? (
+                                    <FormHelperText sx={{ color: "red", ml: 0 }}>
+                                        {errors.password.message}
+                                    </FormHelperText>
+                                ) : null}
                             </FormControl>
                         </Stack>
                         <Button
