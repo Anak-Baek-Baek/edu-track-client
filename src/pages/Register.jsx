@@ -129,7 +129,7 @@ const RegisterPage = () => {
                                         pattern: {
                                             value: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/,
                                             message:
-                                                "Password harus memiliki 1 huruf besar dan 1 simbol",
+                                                "Password harus memiliki 1 huruf besar,1 angka dan 1 simbol",
                                         },
                                         required: { message: "password is required" },
                                     })}
