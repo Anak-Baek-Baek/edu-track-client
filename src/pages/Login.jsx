@@ -43,7 +43,7 @@ const LoginPage = () => {
 
     const onSubmit = async ({ email, password }) => {
         try {
-            const res = await signInWithEmailAndPassword(auth, email, password)
+            await signInWithEmailAndPassword(auth, email, password)
             enqueueSnackbar("success login", {
                 variant: "success",
                 anchorOrigin: { horizontal: "right", vertical: "top" },
