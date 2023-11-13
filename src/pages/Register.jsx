@@ -39,7 +39,9 @@ const RegisterPage = () => {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm()
+    } = useForm({
+        mode: "onBlur",
+    })
 
     const onSubmit = async ({ email, password }) => {
         try {
