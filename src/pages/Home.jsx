@@ -18,12 +18,6 @@ import getRandomCourse from "../utils/getRandomCourse"
 import Footer from "../component/template/Footer"
 
 const Home = () => {
-    const [selectedCategory, setSelectedCategory] = useState(null)
-
-    const filteredCourses = selectedCategory
-        ? courses.filter(course => course.category === selectedCategory)
-        : courses
-
     const recommendedCourse = getRandomCourse(8)
 
     return (
@@ -113,60 +107,28 @@ const Home = () => {
                 {/* Category cards */}
                 <Grid2 container columns={12} spacing={4}>
                     <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard
-                            name="Design"
-                            image={design}
-                            onClick={() => filteredCourses("design")}
-                        />
+                        <CategoryCard name="Design" image={design} />
                     </Grid2>
                     <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard
-                            name="Development"
-                            image={development}
-                            onClick={() => filteredCourses("development")}
-                        />
+                        <CategoryCard name="Development" image={development} />
                     </Grid2>
                     <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard
-                            name="Marketing"
-                            image={marketing}
-                            onClick={() => filteredCourses("marketing")}
-                        />
+                        <CategoryCard name="Marketing" image={marketing} />
                     </Grid2>
                     <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard
-                            name="Self Development"
-                            image={selfdev}
-                            onClick={() => filteredCourses("selfDevelopment")}
-                        />
+                        <CategoryCard name="Self Development" image={selfdev} />
                     </Grid2>
                     <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard
-                            name="Business"
-                            image={business}
-                            onClick={() => filteredCourses("business")}
-                        />
+                        <CategoryCard name="Business" image={business} />
                     </Grid2>
                     <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard
-                            name="Photography"
-                            image={photography}
-                            onClick={() => filteredCourses("photography")}
-                        />
+                        <CategoryCard name="Photography" image={photography} />
                     </Grid2>
                     <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard
-                            name="Music"
-                            image={music}
-                            onClick={() => filteredCourses("music")}
-                        />
+                        <CategoryCard name="Music" image={music} />
                     </Grid2>
                     <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard
-                            name="Finance & Accounting"
-                            image={finance}
-                            onClick={() => filteredCourses("finance")}
-                        />
+                        <CategoryCard name="Finance & Accounting" image={finance} />
                     </Grid2>
                 </Grid2>
             </Box>
