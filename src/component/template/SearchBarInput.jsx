@@ -11,31 +11,27 @@ import {
     Fade,
     Grow,
 } from "@mui/material"
-import courses from "../../data/data"
 import { useNavigate } from "react-router-dom"
 import useDebounce from "../../hooks/useDebounce"
+import { useGetCourseSearch } from "../../hooks/use-api"
 
 const SearchBarInput = ({ w, onModalClose }) => {
     const navigate = useNavigate()
-    const [searchResults, setSearchResults] = useState([])
     const [searchQuery, setSearchQuery] = useState("")
+    const { data: coursesData, refetch, isFetching } = useGetCourseSearch(searchQuery)
     const [selectedItem, setSelectedItem] = useState(null)
     const [showAutocomplete, setShowAutocomplete] = useState(false)
-    const { debouncedValue, isLoading } = useDebounce(searchResults, 700)
+    const { debouncedValue, isLoading } = useDebounce(coursesData, 700)
+    console.log(coursesData)
     const handleSearch = e => {
         const query = e.target.value.toLowerCase()
         setSearchQuery(query)
 
         if (query) {
-            const filteredResults = courses
-                .filter(course => course.name.toLowerCase().includes(query))
-                .slice(0, 10)
-
-            setSearchResults(filteredResults)
+            refetch()
             setSelectedItem(null)
             setShowAutocomplete(true)
         } else {
-            setSearchResults([])
             setSelectedItem(null)
             setShowAutocomplete(false)
         }
@@ -133,11 +129,11 @@ const SearchBarInput = ({ w, onModalClose }) => {
                 >
                     <ClickAwayListener onClickAway={handleClickAway}>
                         <List>
-                            {isLoading ? (
+                            {isFetching && isLoading ? (
                                 <ListItem>loading...</ListItem>
-                            ) : debouncedValue.length > 0 && searchQuery ? (
+                            ) : debouncedValue?.length > 0 && searchQuery ? (
                                 <>
-                                    {debouncedValue.map((result, index) => (
+                                    {coursesData?.map((result, index) => (
                                         <ListItem
                                             key={index}
                                             onClick={() => handleItemClick(result)}

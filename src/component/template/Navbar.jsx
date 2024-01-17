@@ -10,7 +10,7 @@ import {
     ListItemButton,
     ListItemIcon,
     ListItemText,
-    Paper,
+    Button,
     Popover,
     Toolbar,
     Typography,
@@ -27,6 +27,7 @@ import { signOut } from "firebase/auth"
 import { useSnackbar } from "notistack"
 const Navbar = () => {
     const [user] = useAuthState(auth)
+    const pathName = useLocation().pathname
     const navigate = useNavigate()
     const location = useLocation()
     const { enqueueSnackbar } = useSnackbar()
@@ -84,9 +85,13 @@ const Navbar = () => {
                             edutrack.
                         </Typography>
                     </Box>
-                    <Box display={{ xs: "none", sm: "flex" }}>
-                        <SearchBarInput />
-                    </Box>
+                    {pathName.split("/")[1] === "lecturer-page" ? null : (
+                        <>
+                            <Box display={{ xs: "none", sm: "flex" }}>
+                                <SearchBarInput />
+                            </Box>
+                        </>
+                    )}
                     <Box display="flex" gap={1} alignItems="center">
                         {/* mobile search */}
                         <IconButton
@@ -97,6 +102,15 @@ const Navbar = () => {
                         >
                             <Search sx={{ fontSize: 24 }} />
                         </IconButton>
+
+                        <Button
+                            aria-label="profile"
+                            color="inherit"
+                            size="large"
+                            onClick={() => navigate("/lecturer-page")}
+                        >
+                            lecturer
+                        </Button>
 
                         <IconButton
                             aria-label="profile"
@@ -130,7 +144,11 @@ const Navbar = () => {
                             }}
                         >
                             <List
-                                sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+                                sx={{
+                                    width: "100%",
+                                    maxWidth: 360,
+                                    bgcolor: "background.paper",
+                                }}
                                 aria-labelledby="nested-list-subheader"
                             >
                                 <ListItemButton onClick={handleSignOut}>

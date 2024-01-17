@@ -7,6 +7,7 @@ import Footer from "../component/template/Footer"
 
 const ProtectedLayout = () => {
     const [user, loading] = useAuthState(auth)
+
     if (!user && !loading) {
         return <Navigate to="/login" replace />
     }

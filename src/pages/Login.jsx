@@ -51,9 +51,8 @@ const LoginPage = () => {
                 anchorOrigin: { horizontal: "right", vertical: "top" },
                 autoHideDuration: 2000,
             })
-            setTimeout(() => {
-                navigate("/")
-            })
+
+            navigate("/")
         } catch (error) {
             enqueueSnackbar("email or password is wrong", {
                 variant: "error",
@@ -71,7 +70,11 @@ const LoginPage = () => {
                 navigate("/")
             }
         } catch (error) {
-            console.log(error)
+            enqueueSnackbar("try again later.", {
+                variant: "error",
+                anchorOrigin: { horizontal: "right", vertical: "top" },
+                autoHideDuration: 2000,
+            })
         }
     }
     return (

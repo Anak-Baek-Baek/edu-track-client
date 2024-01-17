@@ -17,7 +17,7 @@ import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 const CourseCard = props => {
     const { imageUrl, title, lecturer, totalSection, progressPercent, id, ...prop } = props
-    const [progress, setProgress] = useState(0)
+
     const MotionCard = motion(Card)
 
     const cardVariant = {
