@@ -4,23 +4,12 @@ import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import registerLectureAsset from "../assets/lecturerRegister.gif"
 import section2Asset from "../assets/section2.gif"
 import CategoryCard from "../component/category/CategoryCard"
-import design from "../assets/design.png"
-import development from "../assets/development.png"
-import marketing from "../assets/marketing.png"
-import selfdev from "../assets/selfDevelopment.png"
-import business from "../assets/business.png"
-import photography from "../assets/photography.png"
-import music from "../assets/music.png"
-import finance from "../assets/finance.png"
-import getRandomCourse from "../utils/getRandomCourse"
 
-import { useGetAllCourses } from "../hooks/use-api"
+import { useGetALlCategory, useGetAllCourses } from "../hooks/use-api"
 
 const Home = () => {
-    const recommendedCourse = getRandomCourse(8)
-
     const { data: allcourses } = useGetAllCourses()
-
+    const { data: allCategory } = useGetALlCategory()
     return (
         <>
             <Box
@@ -46,7 +35,7 @@ const Home = () => {
                                 totalSection={course.CourseSection?.length}
                                 progressPercent={80}
                                 lecturer={course.lecturer.name}
-                                imageUrl={course.bacgkroundUrl}
+                                backgroundUrl={course.backgroundUrl}
                                 id={course.id}
                             />
                         </Grid2>
@@ -85,7 +74,14 @@ const Home = () => {
                         Instructors from around the world teach millions of learners on edutrack. We
                         provide the tools and skills to teach what you love.
                     </Typography>
-                    <Button color="inherit" variant="contained" fullWidth>
+                    <Button
+                        color="inherit"
+                        onClick={() => {
+                            window.location.href = import.meta.env.VITE_LECTURER_URL
+                        }}
+                        variant="contained"
+                        fullWidth
+                    >
                         register!
                     </Button>
                 </Box>
@@ -107,30 +103,15 @@ const Home = () => {
                 </Typography>
                 {/* Category cards */}
                 <Grid2 container columns={12} spacing={4}>
-                    <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard name="Design" image={design} />
-                    </Grid2>
-                    <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard name="Development" image={development} />
-                    </Grid2>
-                    <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard name="Marketing" image={marketing} />
-                    </Grid2>
-                    <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard name="Self Development" image={selfdev} />
-                    </Grid2>
-                    <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard name="Business" image={business} />
-                    </Grid2>
-                    <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard name="Photography" image={photography} />
-                    </Grid2>
-                    <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard name="Music" image={music} />
-                    </Grid2>
-                    <Grid2 xs={12} sm={6} md={4} lg={3}>
-                        <CategoryCard name="Finance & Accounting" image={finance} />
-                    </Grid2>
+                    {allCategory?.map((category, index) => (
+                        <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
+                            <CategoryCard
+                                name={category.name}
+                                image={category.imageUrl}
+                                id={category.id}
+                            />
+                        </Grid2>
+                    ))}
                 </Grid2>
             </Box>
             {/* Podcast section */}

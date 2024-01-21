@@ -5,6 +5,17 @@ const BASE_URL = `api/v1/course`
 export const getAllCourse = async () => {
     try {
         const res = await axiosInstance.get(BASE_URL)
+
+        return res.data.data
+    } catch (error) {
+        throw error.message
+    }
+}
+
+export const getAllCourseByCategory = async id => {
+    try {
+        const res = await axiosInstance.get(`${BASE_URL}/category/${id}`)
+
         return res.data.data
     } catch (error) {
         throw error.message
@@ -25,6 +36,7 @@ export const getSearchCourse = async q => {
         const res = await axiosInstance.get(`${BASE_URL}/search`, {
             params: { q },
         })
+        console.log(res)
         return res.data.data
     } catch (error) {
         throw error.message

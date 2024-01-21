@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material"
 import { Link } from "react-router-dom"
 
-const CategoryCard = ({ name, image }) => {
-    const categoryUrl = `/category/${name.toLowerCase()}`
+const CategoryCard = ({ name, image, id }) => {
+    const categoryUrl = `/category/${id}`
 
     return (
         <Link to={categoryUrl} style={{ textDecoration: "none" }}>

@@ -22,7 +22,6 @@ const SearchBarInput = ({ w, onModalClose }) => {
     const [selectedItem, setSelectedItem] = useState(null)
     const [showAutocomplete, setShowAutocomplete] = useState(false)
     const { debouncedValue, isLoading } = useDebounce(coursesData, 700)
-    console.log(coursesData)
     const handleSearch = e => {
         const query = e.target.value.toLowerCase()
         setSearchQuery(query)
@@ -35,6 +34,10 @@ const SearchBarInput = ({ w, onModalClose }) => {
             setSelectedItem(null)
             setShowAutocomplete(false)
         }
+    }
+
+    const handleEnterSeach = () => {
+        navigate(`/search?q=${encodeURIComponent(searchQuery)}`)
     }
 
     const handleItemClick = result => {
@@ -79,7 +82,6 @@ const SearchBarInput = ({ w, onModalClose }) => {
     return (
         <Box sx={{ position: "relative" }}>
             <Box
-                component="form"
                 sx={{
                     p: "2px 4px",
                     display: "flex",
@@ -107,6 +109,11 @@ const SearchBarInput = ({ w, onModalClose }) => {
                     }}
                     onChange={handleSearch}
                     value={searchQuery}
+                    onKeyDown={e => {
+                        if (e.key === "Enter") {
+                            handleEnterSeach()
+                        }
+                    }}
                 />
                 <IconButton
                     sx={{ p: "10px", display: { xs: "flex", sm: "none" } }}

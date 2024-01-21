@@ -18,7 +18,6 @@ const RegisterPage = lazy(() => import("./pages/Register"))
 const LecturerDetailPage = lazy(() => import("./pages/LecturerDetail"))
 const SearchResult = lazy(() => import("./pages/SearchResults"))
 const CategoryPage = lazy(() => import("./pages/CategoryPage"))
-const LecturerPage = lazy(() => import("./pages/LecturerPage"))
 
 const queryClient = new QueryClient()
 

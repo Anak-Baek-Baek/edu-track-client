@@ -3,14 +3,13 @@ import { Box, Typography, Divider, Button } from "@mui/material"
 import courses from "../data/data"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import CourseCard from "../component/course/CourseCard"
+import { useGetCourseSearch } from "../hooks/use-api"
 
 const SearchResults = () => {
     const location = useLocation()
     const searchQuery = new URLSearchParams(location.search).get("q")
     const navigate = useNavigate()
-    const searchResults = courses.filter(course =>
-        course.name.toLowerCase().includes(searchQuery.toLowerCase())
-    )
+    const { data: searchResults } = useGetCourseSearch(searchQuery)
 
     return (
         <Box
@@ -25,17 +24,17 @@ const SearchResults = () => {
         >
             <h1>Search Results for &quot;{searchQuery}&quot;</h1>
             <Divider />
-            {searchResults.length > 0 ? (
+            {searchResults?.length > 0 ? (
                 <Grid2 container columns={12} spacing={4}>
-                    {searchResults.map((course, index) => (
+                    {searchResults?.map((course, index) => (
                         <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
                             <CourseCard
                                 custom={index}
                                 title={course.name}
-                                totalSection={course.totalSections}
+                                totalSection={course.CourseSection?.length}
                                 progressPercent={80}
                                 lecturer={course.lecturer.name}
-                                imageUrl={course.bacgkroundUrl}
+                                backgroundUrl={course.backgroundUrl}
                                 id={course.id}
                             />
                         </Grid2>
@@ -49,7 +48,7 @@ const SearchResults = () => {
             )}
             <Divider />
         </Box>
-    );
-};
+    )
+}
 
-export default SearchResults;
+export default SearchResults

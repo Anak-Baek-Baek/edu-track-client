@@ -6,7 +6,13 @@ import {
     getLecturerCourses,
     getLecturerDetail,
 } from "../api/lecturer"
-import { getAllCourse, getCourseDetail, getSearchCourse } from "../api/course"
+import {
+    getAllCourse,
+    getAllCourseByCategory,
+    getCourseDetail,
+    getSearchCourse,
+} from "../api/course"
+import { getAllCategory, getDetailCategory } from "../api/category"
 
 export const useGetLecturer = () => {
     return useQuery({
@@ -75,6 +81,33 @@ export const useCreateLecturer = () => {
     return useMutation({
         mutationFn: async data => {
             return await createLecturer(data)
+        },
+    })
+}
+
+export const useGetALlCategory = () => {
+    return useQuery({
+        queryKey: ["categories"],
+        queryFn: async () => {
+            return await getAllCategory()
+        },
+    })
+}
+
+export const useGetDetailCategory = id => {
+    return useQuery({
+        queryKey: ["categoriesDetail", id],
+        queryFn: async () => {
+            return await getDetailCategory(id)
+        },
+    })
+}
+
+export const useGetAllCourseByCategory = id => {
+    return useQuery({
+        queryKey: ["coursesCategory", id],
+        queryFn: async () => {
+            return await getAllCourseByCategory(id)
         },
     })
 }

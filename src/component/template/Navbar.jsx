@@ -60,6 +60,9 @@ const Navbar = () => {
 
     const open = Boolean(anchorEl)
     const id = open ? "open-popover" : undefined
+    const navigateToExternalUrl = () => {
+        window.location.href = import.meta.env.VITE_LECTURER_URL
+    }
     return (
         <>
             <AppBar
@@ -107,7 +110,7 @@ const Navbar = () => {
                             aria-label="profile"
                             color="inherit"
                             size="large"
-                            onClick={() => navigate("/lecturer-page")}
+                            onClick={navigateToExternalUrl}
                         >
                             lecturer
                         </Button>

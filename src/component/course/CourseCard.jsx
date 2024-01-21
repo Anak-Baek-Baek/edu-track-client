@@ -16,8 +16,8 @@ import "./courseCard.css"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 const CourseCard = props => {
-    const { imageUrl, title, lecturer, totalSection, progressPercent, id, ...prop } = props
-
+    const { backgroundUrl, title, lecturer, totalSection, progressPercent, id, ...prop } = props
+    console.log(props)
     const MotionCard = motion(Card)
 
     const cardVariant = {
@@ -62,7 +62,7 @@ const CourseCard = props => {
                         height: 160,
                         borderRadius: ".5rem",
                     }}
-                    image={imageUrl || exampleImage}
+                    image={backgroundUrl || exampleImage}
                     title={title}
                 />
                 <CardContent sx={{ padding: 0, display: "flex", flexDirection: "column", gap: 2 }}>
