@@ -86,7 +86,7 @@ const CourseCard = props => {
                                 : `${totalSection} section`}
                         </Typography>
                     </Box>
-                    <Box display="flex" flexDirection="column" gap={1}>
+                    {/* <Box display="flex" flexDirection="column" gap={1}>
                         <LinearProgress
                             variant="determinate"
                             value={progressPercent}
@@ -104,7 +104,7 @@ const CourseCard = props => {
                         <Typography variant="p" fontSize="larger">
                             {progressPercent}% completed
                         </Typography>
-                    </Box>
+                    </Box> */}
                 </CardContent>
             </CardActionArea>
         </MotionCard>
