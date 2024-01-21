@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react"
-import { Box, Button, Grid, Typography } from "@mui/material"
+import { Box, Button, Typography } from "@mui/material"
 import CourseCard from "../component/course/CourseCard"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import registerLectureAsset from "../assets/lecturerRegister.gif"
@@ -13,15 +12,9 @@ import business from "../assets/business.png"
 import photography from "../assets/photography.png"
 import music from "../assets/music.png"
 import finance from "../assets/finance.png"
-import courses from "../data/data"
 import getRandomCourse from "../utils/getRandomCourse"
-import Footer from "../component/template/Footer"
-import Profile from "../component/profile/Profile"
-import { useQuery } from "@tanstack/react-query"
-import { getAllLecturer } from "../api/lecturer"
-import { useAuthState } from "react-firebase-hooks/auth"
-import { auth } from "../config/firebase"
-import { useGetAllCourses, useGetLecturer } from "../hooks/use-api"
+
+import { useGetAllCourses } from "../hooks/use-api"
 
 const Home = () => {
     const recommendedCourse = getRandomCourse(8)
@@ -43,7 +36,6 @@ const Home = () => {
                 <Typography variant="h4" fontWeight="700">
                     learn new thing
                 </Typography>
-                <Profile />
                 {/* Course cards */}
                 <Grid2 container columns={12} spacing={4}>
                     {allcourses?.map((course, index) => (

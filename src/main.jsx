@@ -1,3 +1,5 @@
+/* eslint-disable react-refresh/only-export-components */
+import "./styles/globals.css"
 import ReactDOM from "react-dom/client"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 
@@ -9,7 +11,7 @@ import Loading from "./component/template/Loading"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
 const HomePage = lazy(() => import("./pages/Home"))
-const LoginPage = lazy(() => import("./pages/Login"))
+const LoginPage = lazy(() => import("./pages/login"))
 const CourseDetailPage = lazy(() => import("./pages/CourseDetail"))
 const ProtectedLayout = lazy(() => import("./layout/ProtectedLayout"))
 const RegisterPage = lazy(() => import("./pages/Register"))
@@ -33,7 +35,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                                 <Route path="lecturer/:id" Component={LecturerDetailPage} />
                                 <Route path="search" Component={SearchResult} />
                                 <Route path="category/:category" element={<CategoryPage />} />
-                                <Route path="lecturer-page" Component={LecturerPage} />
                             </Route>
                             <Route path="/login" Component={LoginPage} />
                             <Route path="/register" Component={RegisterPage} />

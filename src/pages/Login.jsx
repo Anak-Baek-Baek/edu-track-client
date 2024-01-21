@@ -66,6 +66,7 @@ const LoginPage = () => {
         try {
             const res = await signInWithPopup(auth, googleProvider)
             const credential = GoogleAuthProvider.credentialFromResult(res)
+            res.user.uid
             if (credential) {
                 navigate("/")
             }

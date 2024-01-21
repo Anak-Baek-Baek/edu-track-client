@@ -22,7 +22,26 @@ export const getAllLecturer = async () => {
  * }>} Lecturer detail.
  */
 export const getLecturerDetail = async id => {
-    const res = await axiosInstance.get(`${baseUrl}/${id}`)
+    const res = await axiosInstance.get(`${baseUrl}/detail/${id}`)
 
+    return res.data.data
+}
+
+export const getLecturerAsUser = async () => {
+    const res = await axiosInstance.get(`${baseUrl}/asUser`)
+    return res.data.data
+}
+
+export const createLecturer = async data => {
+    try {
+        const res = await axiosInstance.post(`${baseUrl}`, data)
+        return res.data
+    } catch (error) {
+        throw error.message
+    }
+}
+
+export const getLecturerCourses = async id => {
+    const res = await axiosInstance.get(`${baseUrl}/detail/${id}/courses`)
     return res.data.data
 }

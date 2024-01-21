@@ -1,5 +1,11 @@
-import { useQuery } from "@tanstack/react-query"
-import { getAllLecturer, getLecturerDetail } from "../api/lecturer"
+import { useQuery, useMutation } from "@tanstack/react-query"
+import {
+    createLecturer,
+    getAllLecturer,
+    getLecturerAsUser,
+    getLecturerCourses,
+    getLecturerDetail,
+} from "../api/lecturer"
 import { getAllCourse, getCourseDetail, getSearchCourse } from "../api/course"
 
 export const useGetLecturer = () => {
@@ -10,8 +16,6 @@ export const useGetLecturer = () => {
         },
     })
 }
-
-
 
 export const useGetAllCourses = () => {
     return useQuery({
@@ -45,6 +49,32 @@ export const useGetCourseSearch = q => {
         queryKey: ["searchCourses", q],
         queryFn: async () => {
             return await getSearchCourse(q)
+        },
+    })
+}
+
+export const useGetLecturerAsUser = () => {
+    return useQuery({
+        queryKey: ["isLecturer"],
+        queryFn: async () => {
+            return await getLecturerAsUser()
+        },
+    })
+}
+
+export const useGetLecturerCourses = id => {
+    return useQuery({
+        queryKey: ["lecturerCourses", id],
+        queryFn: async () => {
+            return await getLecturerCourses(id)
+        },
+    })
+}
+
+export const useCreateLecturer = () => {
+    return useMutation({
+        mutationFn: async data => {
+            return await createLecturer(data)
         },
     })
 }
