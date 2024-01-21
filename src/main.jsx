@@ -11,7 +11,7 @@ import Loading from "./component/template/Loading"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
 const HomePage = lazy(() => import("./pages/Home"))
-const LoginPage = lazy(() => import("./pages/login"))
+const LoginPage = lazy(() => import("./pages/Login"))
 const CourseDetailPage = lazy(() => import("./pages/CourseDetail"))
 const ProtectedLayout = lazy(() => import("./layout/ProtectedLayout"))
 const RegisterPage = lazy(() => import("./pages/Register"))
