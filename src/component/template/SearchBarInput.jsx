@@ -22,20 +22,20 @@ const SearchBarInput = ({ w, onModalClose }) => {
     const [selectedItem, setSelectedItem] = useState(null)
     const [showAutocomplete, setShowAutocomplete] = useState(false)
     const { debouncedValue, isLoading } = useDebounce(coursesData, 700)
-    console.log(coursesData)
-    const handleSearch = e => {
-        const query = e.target.value.toLowerCase()
-        setSearchQuery(query)
-
+    // console.log(coursesData)
+    const handleSearch = (e) => {
+        const query = e.target.value.toLowerCase();
+        console.log(query)
+        setSearchQuery(query);
         if (query) {
-            refetch()
-            setSelectedItem(null)
-            setShowAutocomplete(true)
+            refetch({ search: query });
+            setSelectedItem(null);
+            setShowAutocomplete(true);
         } else {
-            setSelectedItem(null)
-            setShowAutocomplete(false)
+            setSelectedItem(null);
+            setShowAutocomplete(false);
         }
-    }
+    };
 
     const handleItemClick = result => {
         setSearchQuery(result.name)
