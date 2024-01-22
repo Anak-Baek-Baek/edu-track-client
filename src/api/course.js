@@ -36,7 +36,7 @@ export const getSearchCourse = async q => {
         const res = await axiosInstance.get(`${BASE_URL}/search`, {
             params: { q },
         })
-        console.log(res)
+
         return res.data.data
     } catch (error) {
         throw error.message
