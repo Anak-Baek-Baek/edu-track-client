@@ -7,9 +7,12 @@ import CategoryCard from "../component/category/CategoryCard"
 import Skeleton from "@mui/material/Skeleton"
 import { useGetALlCategory, useGetAllCourses } from "../hooks/use-api"
 
+import getRandomCourse from "../utils/getRandomCourse"
+
 const Home = () => {
     const { data: allcourses, isFetching: isCourseLoading } = useGetAllCourses()
     const { data: allCategory, isFetching: isCategoryLoading } = useGetALlCategory()
+    const courses = getRandomCourse(allcourses, 8)
     return (
         <>
             <Box
@@ -39,7 +42,7 @@ const Home = () => {
                         </>
                     ) : (
                         <>
-                            {allcourses?.map((course, index) => (
+                            {courses?.map((course, index) => (
                                 <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
                                     <CourseCard
                                         custom={index}

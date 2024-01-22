@@ -7,7 +7,7 @@ import { useGetLecturerDetail } from "../hooks/use-api"
 const LecturerDetail = () => {
     const { id } = useParams()
     const { data, isLoading } = useGetLecturerDetail(id)
-    if (isLoading) return <h1>lioading....</h1>
+    if (isLoading) return <h1>loading....</h1>
     return (
         <Box
             sx={{
@@ -50,10 +50,10 @@ const LecturerDetail = () => {
                             <CourseCard
                                 custom={index}
                                 title={course.name}
-                                totalSection={course.CourseSection.length}
+                                totalSection={course.CourseSection?.length}
                                 progressPercent={80}
                                 lecturer={data.name}
-                                imageUrl={course.bacgkroundUrl}
+                                backgroundUrl={course.backgroundUrl}
                                 id={course.id}
                             />
                         </Grid2>
