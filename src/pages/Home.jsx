@@ -4,12 +4,12 @@ import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import registerLectureAsset from "../assets/lecturerRegister.gif"
 import section2Asset from "../assets/section2.gif"
 import CategoryCard from "../component/category/CategoryCard"
-
+import Skeleton from "@mui/material/Skeleton"
 import { useGetALlCategory, useGetAllCourses } from "../hooks/use-api"
 
 const Home = () => {
-    const { data: allcourses } = useGetAllCourses()
-    const { data: allCategory } = useGetALlCategory()
+    const { data: allcourses, isFetching: isCourseLoading } = useGetAllCourses()
+    const { data: allCategory, isFetching: isCategoryLoading } = useGetALlCategory()
     return (
         <>
             <Box
@@ -27,19 +27,33 @@ const Home = () => {
                 </Typography>
                 {/* Course cards */}
                 <Grid2 container columns={12} spacing={4}>
-                    {allcourses?.map((course, index) => (
-                        <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
-                            <CourseCard
-                                custom={index}
-                                title={course.name}
-                                totalSection={course.CourseSection?.length}
-                                progressPercent={80}
-                                lecturer={course.lecturer.name}
-                                backgroundUrl={course.backgroundUrl}
-                                id={course.id}
-                            />
-                        </Grid2>
-                    ))}
+                    {isCourseLoading ? (
+                        <>
+                            {Array.from({ length: 8 })
+                                ?.fill(null)
+                                .map((_, index) => (
+                                    <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
+                                        <Skeleton width="full" sx={{ aspectRatio: 1 }} />
+                                    </Grid2>
+                                ))}
+                        </>
+                    ) : (
+                        <>
+                            {allcourses?.map((course, index) => (
+                                <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
+                                    <CourseCard
+                                        custom={index}
+                                        title={course.name}
+                                        totalSection={course.CourseSection?.length}
+                                        progressPercent={80}
+                                        lecturer={course.lecturer.name}
+                                        backgroundUrl={course.backgroundUrl}
+                                        id={course.id}
+                                    />
+                                </Grid2>
+                            ))}
+                        </>
+                    )}
                 </Grid2>
             </Box>
 
@@ -103,15 +117,29 @@ const Home = () => {
                 </Typography>
                 {/* Category cards */}
                 <Grid2 container columns={12} spacing={4}>
-                    {allCategory?.map((category, index) => (
-                        <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
-                            <CategoryCard
-                                name={category.name}
-                                image={category.imageUrl}
-                                id={category.id}
-                            />
-                        </Grid2>
-                    ))}
+                    {isCategoryLoading ? (
+                        <>
+                            {Array.from({ length: 8 })
+                                ?.fill(null)
+                                .map((_, index) => (
+                                    <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
+                                        <Skeleton width="full" sx={{ aspectRatio: 1 }} />
+                                    </Grid2>
+                                ))}
+                        </>
+                    ) : (
+                        <>
+                            {allCategory?.map((category, index) => (
+                                <Grid2 xs={12} sm={6} md={4} lg={3} key={index}>
+                                    <CategoryCard
+                                        name={category.name}
+                                        image={category.imageUrl}
+                                        id={category.id}
+                                    />
+                                </Grid2>
+                            ))}
+                        </>
+                    )}
                 </Grid2>
             </Box>
             {/* Podcast section */}

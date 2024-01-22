@@ -1,15 +1,12 @@
 import { Avatar, Box, Divider, Typography } from "@mui/material"
 import { useParams } from "react-router-dom"
-import lecturers from "../data/lecturer"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
-import courses from "../data/data"
 import CourseCard from "../component/course/CourseCard"
 import { useGetLecturerDetail } from "../hooks/use-api"
 
 const LecturerDetail = () => {
     const { id } = useParams()
     const { data, isLoading } = useGetLecturerDetail(id)
-    // const allLecturerCourse = courses.filter(course => course.lecturer.id === findLecturer.id)
     if (isLoading) return <h1>lioading....</h1>
     return (
         <Box
