@@ -109,7 +109,7 @@ const CourseDetail = () => {
                                 <ReactPlayer
                                     width="100%"
                                     height="100%"
-                                    url={data?.CourseSection[currentSection].videoUrl}
+                                    url={data?.CourseSection[currentSection]?.videoUrl}
                                     controls
                                     config={{
                                         youtube: {
